@@ -74,7 +74,7 @@ export const MyMap = ({ checkBoxChecked }) => {
                 <Popup>
                   <div className="flex flex-col items-center gap-2 w-[15em] ">
                     <img
-                      src={"http://localhost:1337" + marker.image}
+                      src={marker.image}
                       alt={marker.alt}
                       className="w-[10em] rounded-xl"
                     />

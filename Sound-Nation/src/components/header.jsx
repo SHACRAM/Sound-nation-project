@@ -1,37 +1,37 @@
 const reseaux = [
   {
     name: "Facebook",
-    path: "images/Facebook.svg",
+    path: "/images/Facebook.svg",
     description: "icone de facebook",
     link: "https://www.facebook.com/",
   },
   {
     name: "Twitter",
-    path: "images/Twitter.svg",
+    path: "/images/Twitter.svg",
     description: "icone de twitter",
     link: "https://www.twitter.com/",
   },
   {
     name: "Youtube",
-    path: "images/Youtube.svg",
+    path: "/images/Youtube.svg",
     description: "icone de youtube",
     link: "https://www.youtube.com/",
   },
   {
     name: "Instagram",
-    path: "images/Instagram.svg",
+    path: "/images/Instagram.svg",
     description: "icone de instagram",
     link: "https://www.instagram.com/",
   },
   {
     name: "Linkedin",
-    path: "images/Linkedin.svg",
+    path: "/images/Linkedin.svg",
     description: "icone de linkedin",
     link: "https://www.linkedin.com/",
   },
   {
     name: "Snapchat",
-    path: "images/Snapchat.svg",
+    path: "/images/Snapchat.svg",
     description: "icone de snapchat",
     link: "https://www.snapchat.com/",
   },
@@ -42,7 +42,7 @@ export const Header = () => {
       <div>
         <a href="https://sound-nation-f5c67.firebaseapp.com/">
           <img
-            src="../images/logo.png"
+            src="/images/logo.png"
             alt="Logo du festival Sound Nation"
             className="ml-4 mt-2 mb-4 hover:opacity-80"
           />
@@ -67,12 +67,12 @@ export const Header = () => {
       </div>
       <div className="flex gap-1.5 items-start mt-2 mr-2">
         <img
-          src="../images/fr 1.svg"
+          src="/images/fr 1.svg"
           alt="drapeau français"
           className="w-6 hover:opacity-80"
         />
         <img
-          src="../images/gb 1.svg"
+          src="/images/gb 1.svg"
           alt="drapeau du Royaume-Uni"
           className="w-6 hover:opacity-80"
         />

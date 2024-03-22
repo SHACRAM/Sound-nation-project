@@ -1,19 +1,10 @@
-import { Nav } from "../components/Nav";
-import { Header } from "../components/Header";
 import { DisplayDonneespersonnelles } from "../components/DisplayDonneesPersonnelles";
+import { Layout } from "../components/Layout";
 
 export const DonneesPersonnelles = () => {
   return (
-    <div>
-      <header>
-        <Header />
-      </header>
-      <section>
-        <DisplayDonneespersonnelles />
-      </section>
-      <nav>
-        <Nav />
-      </nav>
-    </div>
+    <Layout>
+      <DisplayDonneespersonnelles />
+    </Layout>
   );
 };

@@ -12,7 +12,7 @@ export const Programmation = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/groupes?populate=*"
+          "https://stylish-luck-2453f4abab.strapiapp.com/api/groupes?populate=*"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");

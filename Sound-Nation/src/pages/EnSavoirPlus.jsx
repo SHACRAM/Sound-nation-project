@@ -10,7 +10,7 @@ export const EnSavoirPlus = () => {
       <div className="bg-black m-10 p-10 flex flex-col items-center gap-[4em] rounded-xl">
         <h1 className="text-white text-[1.5rem] underline">{nom}</h1>
         <img
-          src={`http://localhost:1337${decodeURIComponent(image)}`}
+          src={`${decodeURIComponent(image)}`}
           alt={alt}
           className="w-[15em] rounded-[30px]"
         />

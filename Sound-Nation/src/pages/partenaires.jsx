@@ -13,7 +13,7 @@ export const Partenaire = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/partenaires?populate=*"
+          "https://stylish-luck-2453f4abab.strapiapp.com/api/partenaires?populate=*"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -65,10 +65,7 @@ export const Partenaire = () => {
                 className="flex flex-col gap-3 items-center border-[5px] p-3 rounded-[30px] m-5 w-[fit-content] "
               >
                 <img
-                  src={
-                    "http://localhost:1337" +
-                    equipement.attributes.logo.data.attributes.url
-                  }
+                  src={equipement.attributes.logo.data.attributes.url}
                   alt={
                     equipement.attributes.logo.data.attributes.alternativeText
                   }
@@ -79,7 +76,7 @@ export const Partenaire = () => {
                 </h2>
                 <a href={equipement.attributes.site} target="_blank">
                   <button className="text-black text-[1.2rem] bg-[#71A984] p-2 rounded-lg border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5]">
-                    Nous découvrire
+                    Nous découvrir
                   </button>
                 </a>
               </div>
@@ -95,10 +92,7 @@ export const Partenaire = () => {
                 className="flex flex-col gap-3 items-center border-[5px] p-3 rounded-[30px] m-5 w-[fit-content] "
               >
                 <img
-                  src={
-                    "http://localhost:1337" +
-                    banque.attributes.logo.data.attributes.url
-                  }
+                  src={banque.attributes.logo.data.attributes.url}
                   alt={banque.attributes.logo.data.attributes.alternativeText}
                   className="w-[13em] rounded-[30px]"
                 />
@@ -123,10 +117,7 @@ export const Partenaire = () => {
                 className="flex flex-col gap-3 items-center border-[5px] p-3 rounded-[30px] m-5 w-[fit-content] "
               >
                 <img
-                  src={
-                    "http://localhost:1337" +
-                    service.attributes.logo.data.attributes.url
-                  }
+                  src={service.attributes.logo.data.attributes.url}
                   alt={service.attributes.logo.data.attributes.alternativeText}
                   className="w-[13em] rounded-[30px]"
                 />
@@ -151,10 +142,7 @@ export const Partenaire = () => {
                 className="flex flex-col gap-3 items-center border-[5px] p-3 rounded-[30px] m-5 w-[fit-content] "
               >
                 <img
-                  src={
-                    "http://localhost:1337" +
-                    produit.attributes.logo.data.attributes.url
-                  }
+                  src={produit.attributes.logo.data.attributes.url}
                   alt={produit.attributes.logo.data.attributes.alternativeText}
                   className="w-[13em] rounded-[30px]"
                 />

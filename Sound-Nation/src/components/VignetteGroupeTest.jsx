@@ -19,10 +19,7 @@ export const VignetteGroupeTest = ({ groupeData }) => {
         </h2>
         <img
           className="w-[15em] rounded-[30px]"
-          src={
-            "http://localhost:1337" +
-            groupeData.attributes.Image.data.attributes.url
-          }
+          src={groupeData.attributes.Image.data.attributes.url}
           alt={groupeData.attributes.Image.data.attributes.alternativeText}
         />
         <p className="text-white text-[1.5rem]">{groupeData.attributes.jour}</p>

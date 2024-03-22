@@ -14,7 +14,7 @@ export const Nav = () => {
           Menu
         </button>
         <img
-          src="../images/angle-up-solid.svg"
+          src="/images/angle-up-solid.svg"
           alt="icone chevron pour ouvrir le menu"
           className={`w-7 pt-1.5 ${
             isOpen

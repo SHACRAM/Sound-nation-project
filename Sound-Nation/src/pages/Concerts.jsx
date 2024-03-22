@@ -116,10 +116,7 @@ export const Concert = () => {
                 <ProgScene
                   key={scene.id}
                   nom={scene.attributes.nom}
-                  image={
-                    "http://localhost:1337" +
-                    scene.attributes.Image.data.attributes.url
-                  }
+                  image={scene.attributes.Image.data.attributes.url}
                   alt={scene.attributes.Image.data.attributes.alternativeText}
                   jour={scene.attributes.jour}
                   heure={scene.attributes.horaire}
@@ -180,10 +177,7 @@ export const Concert = () => {
                 <ProgScene
                   key={scene.id}
                   nom={scene.attributes.nom}
-                  image={
-                    "http://localhost:1337" +
-                    scene.attributes.Image.data.attributes.url
-                  }
+                  image={scene.attributes.Image.data.attributes.url}
                   alt={scene.attributes.Image.data.attributes.alternativeText}
                   jour={scene.attributes.jour}
                   heure={scene.attributes.horaire}
@@ -243,10 +237,7 @@ export const Concert = () => {
                 <ProgScene
                   key={scene.id}
                   nom={scene.attributes.nom}
-                  image={
-                    "http://localhost:1337" +
-                    scene.attributes.Image.data.attributes.url
-                  }
+                  image={scene.attributes.Image.data.attributes.url}
                   alt={scene.attributes.Image.data.attributes.alternativeText}
                   jour={scene.attributes.jour}
                   heure={scene.attributes.horaire}
@@ -306,10 +297,7 @@ export const Concert = () => {
                 <ProgScene
                   key={scene.id}
                   nom={scene.attributes.nom}
-                  image={
-                    "http://localhost:1337" +
-                    scene.attributes.Image.data.attributes.url
-                  }
+                  image={scene.attributes.Image.data.attributes.url}
                   alt={scene.attributes.Image.data.attributes.alternativeText}
                   jour={scene.attributes.jour}
                   heure={scene.attributes.horaire}
@@ -369,10 +357,7 @@ export const Concert = () => {
                 <ProgScene
                   key={scene.id}
                   nom={scene.attributes.nom}
-                  image={
-                    "http://localhost:1337" +
-                    scene.attributes.Image.data.attributes.url
-                  }
+                  image={scene.attributes.Image.data.attributes.url}
                   alt={scene.attributes.Image.data.attributes.alternativeText}
                   jour={scene.attributes.jour}
                   heure={scene.attributes.horaire}

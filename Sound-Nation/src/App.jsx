@@ -8,8 +8,8 @@ import { Concert } from "./pages/Concerts";
 import { Cookies } from "./pages/Cookies";
 import { DonneesPersonnelles } from "./pages/DonneesPersonnelles";
 import { EnSavoirPlus } from "./pages/EnSavoirPlus";
-import { InformationsFaq } from "./pages/informations&faq";
-import { Partenaire } from "./pages/partenaires";
+import { InformationsFaq } from "./pages/Informations&faq";
+import { Partenaire } from "./pages/Partenaires";
 import { Programmation } from "./pages/Programmation";
 
 const router = createBrowserRouter([
