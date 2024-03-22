@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "map_places",
+  "info": {
+    "singularName": "map-place",
+    "pluralName": "map-places",
+    "displayName": "mapPlace",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "nom": {
+      "type": "string"
+    },
+    "marker": {
+      "type": "json",
+      "required": true
+    },
+    "couleur": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
