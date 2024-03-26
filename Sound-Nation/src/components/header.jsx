@@ -44,7 +44,7 @@ export const Header = () => {
           <img
             src="/images/logo.png"
             alt="Logo du festival Sound Nation"
-            className="ml-4 mt-2 mb-4 hover:opacity-80"
+            className="ml-2 mt-2 mb-4 hover:opacity-80"
           />
         </a>
       </div>

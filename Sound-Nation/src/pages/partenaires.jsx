@@ -51,7 +51,7 @@ export const Partenaire = () => {
   } else
     return (
       <Layout>
-        <div className="bg-black m-10 rounded-lg">
+        <div className="bg-black m-10 rounded-lg mb-10">
           <h1 className="text-white text-[2.5rem] flex justify-center pt-7 mb-[2em]">
             Nos partenaires
           </h1>

@@ -64,7 +64,7 @@ export const Concert = () => {
   } else
     return (
       <Layout>
-        <Element name="scene1" className="bg-black m-10 p-10 rounded-lg">
+        <Element name="scene1" className="bg-black m-10 p-5 rounded-lg">
           <h2 className="text-white text-[3rem] flex justify-center">
             Scène 1
           </h2>
@@ -74,7 +74,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 2
             </Link>
@@ -84,7 +84,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 3
             </Link>
@@ -94,7 +94,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 4
             </Link>
@@ -104,7 +104,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 5
             </Link>
@@ -136,7 +136,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 1
             </Link>
@@ -146,7 +146,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 3
             </Link>
@@ -156,7 +156,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 4
             </Link>
@@ -166,7 +166,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 5
             </Link>
@@ -196,7 +196,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 1
             </Link>
@@ -206,7 +206,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 2
             </Link>
@@ -216,7 +216,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 4
             </Link>
@@ -226,7 +226,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 5
             </Link>
@@ -256,7 +256,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 1
             </Link>
@@ -266,7 +266,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 2
             </Link>
@@ -276,7 +276,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 3
             </Link>
@@ -286,7 +286,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 5
             </Link>
@@ -306,7 +306,7 @@ export const Concert = () => {
             })}
           </div>
         </div>
-        <div id="scene5" className="bg-black m-10 p-10 rounded-lg">
+        <div id="scene5" className="bg-black m-10 p-10 rounded-lg mb-10">
           <h2 className="text-white text-[3rem] flex justify-center">
             Scène 5
           </h2>
@@ -316,7 +316,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 1
             </Link>
@@ -326,7 +326,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 2
             </Link>
@@ -336,7 +336,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 3
             </Link>
@@ -346,7 +346,7 @@ export const Concert = () => {
               spy={true}
               smooth={true}
               duration={1000}
-              className="text-white underline cursor-pointer"
+              className="text-white underline cursor-pointer text-[0.8rem]"
             >
               Scène 4
             </Link>
