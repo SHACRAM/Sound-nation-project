@@ -1,0 +1,78 @@
+{
+  "name": "Sound Nation festival",
+  "short_name": "Sound Nation",
+  "start_url": "/",
+  "background_color": "black",
+  "theme_color": "#71A984",
+  "orientation": "portrait-primary",
+  "display": "standalone",
+  "description": "Site officiel du festival Sound Nation, il vous permettra de découvrir les artistes, les dates et les lieux des concerts mais aussi de vous repérer grâce à la carte interactive.",
+  "lang": "fr",
+  "icone": [
+    {
+      "src": "/images/icones/icone-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icones/icone-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

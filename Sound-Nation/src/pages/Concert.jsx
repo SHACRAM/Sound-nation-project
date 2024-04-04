@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import { AffichageGroupe } from "../components/AffichageGroupe";
-import { Filtrage } from "../components/Filtrage";
+import React, { useEffect, useState } from "react";
+import { DisplayArtisteParScene } from "../components/DisplayArtisteParScene";
 import { Layout } from "../components/Layout";
-import { FilterProvider } from "../contexts/FilterContext";
 
-export const Programmation = () => {
+export const Concert = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
+  const [sceneCat, setSceneCat] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,19 +28,32 @@ export const Programmation = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (data) {
+      const typesUniques = {};
+      data.forEach((scene) => {
+        if (!typesUniques[scene.attributes.scene]) {
+          typesUniques[scene.attributes.scene] = true;
+        }
+      });
+      const typesUniquesArray = Object.keys(typesUniques);
+      setSceneCat(typesUniquesArray);
+    }
+  }, [data]);
   if (isLoading) {
     return <p>Chargement en cours...</p>;
   } else
     return (
       <Layout>
-        <div className="bg-black m-10 rounded-lg flex flex-col items-center mb-10">
-          <h1 className="text-white flex justify-center p-5 mb-5 text-3xl">
-            Programmation
-          </h1>
-          <FilterProvider>
-            <Filtrage />
-            <AffichageGroupe data={data} />
-          </FilterProvider>
+        <div className="p-5">
+          {sceneCat.map((cat) => (
+            <DisplayArtisteParScene
+              key={cat}
+              cat={cat}
+              data={data}
+              sceneCat={sceneCat}
+            />
+          ))}
         </div>
       </Layout>
     );

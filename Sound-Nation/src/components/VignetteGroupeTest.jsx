@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export const VignetteGroupeTest = ({ groupeData }) => {
   const nom = groupeData.attributes.nom;
   const image = encodeURIComponent(
-    groupeData.attributes.Image.data.attributes.url
+    "http://localhost:1337" + groupeData.attributes.Image.data.attributes.url
   );
   const alt = groupeData.attributes.Image.data.attributes.alternativeText;
   const bio = groupeData.attributes.bio;
@@ -19,7 +19,10 @@ export const VignetteGroupeTest = ({ groupeData }) => {
         </h2>
         <img
           className="w-[15em] rounded-[30px]"
-          src={groupeData.attributes.Image.data.attributes.url}
+          src={
+            "http://localhost:1337" +
+            groupeData.attributes.Image.data.attributes.url
+          }
           alt={groupeData.attributes.Image.data.attributes.alternativeText}
         />
         <p className="text-white text-[1.5rem]">{groupeData.attributes.jour}</p>

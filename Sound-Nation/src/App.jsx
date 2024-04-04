@@ -4,12 +4,12 @@ import "./App.css";
 import { DisplayCgv } from "./components/DisplayCgv";
 import { Accueil } from "./pages/Accueil";
 import { Carte } from "./pages/Carte";
-import { Concert } from "./pages/Concerts";
+import { Concert } from "./pages/Concert";
 import { Cookies } from "./pages/Cookies";
 import { DonneesPersonnelles } from "./pages/DonneesPersonnelles";
 import { EnSavoirPlus } from "./pages/EnSavoirPlus";
 import { InformationsFaq } from "./pages/Informations&faq";
-import { Partenaire } from "./pages/Partenaires";
+import { Partenaire } from "./pages/Partenaire";
 import { Programmation } from "./pages/Programmation";
 
 const router = createBrowserRouter([
@@ -42,15 +42,15 @@ const router = createBrowserRouter([
     element: <DisplayCgv />,
   },
   {
-    path: "/programmation",
+    path: "/Programmation",
     element: <Programmation />,
   },
   {
-    path: "/partenaires",
+    path: "/Partenaire",
     element: <Partenaire />,
   },
   {
-    path: "/Concerts",
+    path: "/Concert",
     element: <Concert />,
   },
 ]);
