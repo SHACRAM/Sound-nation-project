@@ -17,6 +17,7 @@ export const MyMap = ({
   activateFullScreen,
   desactiveFullScreen,
   isFullScreen,
+  currentHour,
 }) => {
   const mapRef = useRef(null);
   function LocationMarker() {
@@ -105,7 +106,9 @@ export const MyMap = ({
                       <div className="flex flex-col items-center gap-2 w-[15em] ">
                         {concertParScene.hasOwnProperty(marker.nom) ? (
                           <div className="flex flex-col items-center">
-                            {console.log("l")}
+                            <div className="text-lg flex flex-wrap bg-[#023E33] text-white p-3 rounded-xl m-3">
+                              {"Scène " + marker.nom}
+                            </div>
                             <img
                               src={
                                 "http://localhost:1337" +
@@ -121,34 +124,50 @@ export const MyMap = ({
                             <p className="underline text-lg">
                               {concertParScene[marker.nom][0].attributes.nom}
                             </p>
+                            <p className="text-black border-[3px] border-black p-2 flex items-center gap-2">
+                              de&nbsp;
+                              {
+                                concertParScene[marker.nom][0].attributes
+                                  .horaire
+                              }
+                              &nbsp; à {currentHour + 1 + "h"}
+                              <img
+                                src="./public/images/onAir.png"
+                                alt="logo qui représente un concert en cours sur la scène"
+                                className="animate-pulse"
+                              />
+                            </p>
                           </div>
                         ) : (
-                          <img
-                            src="./public/images/offLine.jpg"
-                            alt="Pas de concert en cours"
-                            className="w-[10em] rounded-xl"
-                          />
-                        )}
+                          <div className="flex flex-col items-center">
+                            <div className="text-lg flex flex-wrap bg-[#023E33] text-white p-3 rounded-xl m-3">
+                              {"Scène " + marker.nom}
+                            </div>
+                            <img
+                              src="./public/images/offLine.jpg"
+                              alt="Pas de concert en cours"
+                              className="w-[10em] rounded-xl"
+                            />
 
-                        <div className="text-lg flex flex-wrap bg-[#023E33] text-white p-3 rounded-xl">
-                          {"Scène " + marker.nom}
-                        </div>
-                        <p className="text-black border-[3px] border-black p-2">
-                          {marker.info}
-                        </p>
+                            <p className="text-black border-[3px] border-black p-2">
+                              {marker.info}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </Popup>
                   ) : (
                     <Popup>
                       <div className="flex flex-col items-center gap-2 w-[15em] ">
+                        <div className="text-lg flex  bg-[#023E33] text-white p-3 rounded-xl">
+                          {marker.nom}
+                        </div>
                         <img
                           src={marker.image}
                           alt={marker.alt}
                           className="w-[10em] rounded-xl"
                         />
-                        <div className="text-lg flex flex-wrap bg-[#023E33] text-white p-3 rounded-xl">
-                          {marker.nom}
-                        </div>
+
                         <p className="text-black border-[3px] border-black p-2">
                           {marker.info}
                         </p>

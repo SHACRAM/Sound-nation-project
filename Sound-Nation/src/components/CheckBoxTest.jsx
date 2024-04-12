@@ -11,10 +11,11 @@ export const CheckBoxTest = ({
     handleCheck(nomCategorie, id);
   };
   return (
-    <div className="flex gap-10 justify-between ">
-      <label htmlFor={id} className="text-[1.2rem]">
+    <div className="flex  ">
+      <label htmlFor={id} className="text-[1.2rem] w-[9em]">
         {label}
       </label>
+
       <input
         type="checkbox"
         id={id}

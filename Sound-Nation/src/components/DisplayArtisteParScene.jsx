@@ -35,7 +35,7 @@ export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
                 }
                 alt={artiste.attributes.Image.data.attributes.alternativeText}
                 jour={artiste.attributes.jour}
-                heure={artiste.attributes.horaire}
+                heure={artiste.attributes.horaire + " h"}
               />
             ) : null
           )}

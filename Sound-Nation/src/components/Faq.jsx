@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import { Question } from "./Question";
 
 const questionsReponse = [
@@ -32,7 +30,7 @@ const questionsReponse = [
 
 export const Faq = () => {
   return (
-    <div className="bg-black rounded-lg p-10 flex-col mt-10">
+    <div className="bg-black rounded-lg p-10 flex-col">
       <h1 className="text-white flex justify-center text-3xl mb-10">FAQ</h1>
 
       {questionsReponse.map((question) => (

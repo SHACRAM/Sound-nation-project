@@ -1,13 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CountDown } from "./CountDown";
+import { InstallPWA } from "./PwaInstall";
 
 export const HomePage = () => {
   return (
     <div>
+      <InstallPWA />
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center">
         <img
-          className="w-[100%] rounded-lg"
+          className="rounded-lg"
           src="../images/PhotoFestival.png"
           alt="Photo du festival Sound Nation 2023"
         />
@@ -17,6 +19,21 @@ export const HomePage = () => {
         </p>
       </div>
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center ">
+        <h2 className="text-white mt-2 text-[1.8rem] underline mb-[3em]">
+          En 2024 Sound Nation revient dans
+        </h2>
+        <CountDown />
+        <NavLink
+          to={{
+            pathname: `/Programmation`,
+          }}
+        >
+          <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5] mt-[3em]">
+            Découvir la programmation
+          </button>
+        </NavLink>
+      </div>
+      <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center mb-[5em]">
         <h2 className="text-white mt-5 text-[1.8rem] underline">
           L'année 2023 c'était :
         </h2>
@@ -33,21 +50,6 @@ export const HomePage = () => {
           <strong className="text-[#71A984] text-[3rem]">195 000</strong>
           <br /> spectateurs
         </p>
-      </div>
-      <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center mb-[5em]">
-        <h2 className="text-white mt-5 text-[1.8rem] underline mb-[3em]">
-          En 2024 Sound Nation revient :
-        </h2>
-        <CountDown />
-        <NavLink
-          to={{
-            pathname: `/Programmation`,
-          }}
-        >
-          <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5] mt-[3em]">
-            Découvir la programmation
-          </button>
-        </NavLink>
       </div>
     </div>
   );

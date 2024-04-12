@@ -119,6 +119,7 @@ export const Carte = () => {
                 activateFullScreen={activateFullScreen}
                 desactiveFullScreen={desactiveFullScreen}
                 isFullScreen={isFullScreen}
+                currentHour={currentHour}
               />
             </div>
           </div>

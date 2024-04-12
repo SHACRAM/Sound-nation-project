@@ -17,6 +17,23 @@ export const Filtrage = () => {
     setFiltersNumber(sum);
   }, []);
 
+  useEffect(() => {
+    const storedData = localStorage.getItem("selectedCheckBox");
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setDataFilters(parsedData);
+      parsedData.Jours.forEach((jour) => {
+        if (!jour.checked) setAllChecked(false);
+      });
+      parsedData.Scenes.forEach((scene) => {
+        if (!scene.checked) setAllChecked(false);
+      });
+      parsedData.Heures.forEach((heure) => {
+        if (!heure.checked) setAllChecked(false);
+      });
+    }
+  }, []);
+
   const handleModalDisplay = () => {
     setModalIsOpen(!modalIsOpen);
   };
@@ -32,6 +49,8 @@ export const Filtrage = () => {
     }
 
     setDataFilters(updatedFilters);
+    console.log(updatedFilters);
+    localStorage.setItem("selectedCheckBox", JSON.stringify(updatedFilters));
 
     const checkedFiltersNumber = Object.values(updatedFilters)
       .flat()
@@ -105,12 +124,12 @@ export const Filtrage = () => {
 const FiltrageCategorie = ({ nomCategorie, filtres, handleCheck }) => {
   return (
     <div className="">
-      <h2 className="underline text-[1.5rem] mb-3">{nomCategorie}</h2>
+      <h2 className=" font-bold text-[1.5rem] mb-3">{nomCategorie}</h2>
       <ul>
         {filtres.map((filtre) => (
           <li
             key={filtre.id}
-            className="flex flex-row justify-between gap-3 mb-3"
+            className="flex flex-row justify-between gap-3 mb-3 "
           >
             <CheckBoxTest
               label={filtre.label}

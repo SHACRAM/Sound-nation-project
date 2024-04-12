@@ -1,7 +1,7 @@
-import { Header } from "../components/Header";
-import { Nav } from "../components/Nav";
 import { DisplayInfosPratiques } from "../components/DisplayInfosPratiques";
 import { Faq } from "../components/Faq";
+import { Header } from "../components/Header";
+import { Nav } from "../components/Nav";
 
 export const InformationsFaq = () => {
   return (
@@ -10,8 +10,8 @@ export const InformationsFaq = () => {
         <Header />
       </header>
       <div className="p-10">
-        <DisplayInfosPratiques />
         <Faq />
+        <DisplayInfosPratiques />
       </div>
       <nav>
         <Nav />
