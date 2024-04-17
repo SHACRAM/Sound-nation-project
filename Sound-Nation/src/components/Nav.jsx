@@ -18,7 +18,7 @@ export const Nav = () => {
           <img
             src="/images/angle-up-solid.svg"
             alt="icone chevron pour ouvrir le menu"
-            className={`w-7 pt-1.5 ${
+            className={`w-7 h-10 pt-1.5 ${
               isOpen
                 ? "rotate-180 transition-transform ease-in-out duration-[0.6s]"
                 : "rotate-0 transition-transform ease-in-out duration-[0.6s]"
@@ -37,7 +37,7 @@ export const Nav = () => {
             <img
               src="/images/logo.png"
               alt="Logo du festival Sound Nation"
-              className="mb-6 hover:opacity-80"
+              className="mb-6 w-[6em] h-[5em] hover:opacity-80"
             />
           </a>
         </div>
@@ -53,7 +53,7 @@ export const Nav = () => {
           <li className="text-white bg-[#023E33] justify-center rounded-[50px] p-4 mb-6 text-lg">
             <NavLink
               className="flex justify-center items-center "
-              to="/informations&faq"
+              to="/InformationsFaq"
             >
               Informations & FAQ
             </NavLink>
@@ -83,7 +83,7 @@ export const Nav = () => {
           <li className="text-white  bg-[#023E33] justify-center rounded-[50px] p-4 mb-10 text-lg">
             <NavLink
               className="flex justify-center items-center "
-              to="/programmation"
+              to="/Programmation"
             >
               Programmation
             </NavLink>

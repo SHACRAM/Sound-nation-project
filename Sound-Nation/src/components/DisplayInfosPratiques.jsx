@@ -15,7 +15,7 @@ export const DisplayInfosPratiques = () => {
             alt="fleche vers la doite"
             className="w-8"
           />
-          <NavLink to="/informations&faq/DonneesPersonnelles">
+          <NavLink to="/informationsFaq/DonneesPersonnelles">
             Données personnelles
           </NavLink>
         </li>
@@ -25,7 +25,7 @@ export const DisplayInfosPratiques = () => {
             alt="fleche vers la doite"
             className="w-8"
           />
-          <NavLink to="/informations&faq/Cgv">
+          <NavLink to="/informationsFaq/Cgv">
             Conditions générales de vente
           </NavLink>
         </li>
@@ -35,7 +35,7 @@ export const DisplayInfosPratiques = () => {
             alt="fleche vers la doite"
             className="w-8"
           />
-          <NavLink to="/informations&faq/Cookies">Gestion des cookies</NavLink>
+          <NavLink to="/informationsFaq/Cookies">Gestion des cookies</NavLink>
         </li>
       </ul>
     </div>

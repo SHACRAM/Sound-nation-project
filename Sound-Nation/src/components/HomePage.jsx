@@ -9,8 +9,8 @@ export const HomePage = () => {
       <InstallPWA />
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center">
         <img
-          className="rounded-lg"
-          src="../images/PhotoFestival.png"
+          className="rounded-lg w-[100%]"
+          src="../images/homePageComp.webp"
           alt="Photo du festival Sound Nation 2023"
         />
         <p className="text-white mt-[3em] text-[1.2rem] bg-[#023E33] p-3 rounded-lg">

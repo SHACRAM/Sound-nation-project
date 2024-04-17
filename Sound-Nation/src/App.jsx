@@ -8,7 +8,7 @@ import { Concert } from "./pages/Concert";
 import { Cookies } from "./pages/Cookies";
 import { DonneesPersonnelles } from "./pages/DonneesPersonnelles";
 import { EnSavoirPlus } from "./pages/EnSavoirPlus";
-import { InformationsFaq } from "./pages/Informations&faq";
+import { InformationsFaq } from "./pages/InformationsFaq";
 import { Partenaire } from "./pages/Partenaire";
 import { Programmation } from "./pages/Programmation";
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: <Carte />,
   },
   {
-    path: "/informations&faq",
+    path: "/InformationsFaq",
     element: <InformationsFaq />,
   },
   {
@@ -30,15 +30,15 @@ const router = createBrowserRouter([
     element: <EnSavoirPlus />,
   },
   {
-    path: "/informations&faq/DonneesPersonnelles",
+    path: "/InformationsFaq/DonneesPersonnelles",
     element: <DonneesPersonnelles />,
   },
   {
-    path: "/informations&faq/Cookies",
+    path: "/InformationsFaq/Cookies",
     element: <Cookies />,
   },
   {
-    path: "/informations&faq/Cgv",
+    path: "/InformationsFaq/Cgv",
     element: <DisplayCgv />,
   },
   {

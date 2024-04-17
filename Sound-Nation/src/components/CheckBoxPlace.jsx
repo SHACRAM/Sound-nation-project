@@ -3,7 +3,8 @@ import React from "react";
 export const CheckBoxPlace = ({ checkBox, handleChange }) => {
   return (
     <div className="flex gap-3 ">
-      <label htmlFor="checkBox" className="text-white text-xl">
+       <img src={'http://localhost:1337'+checkBox.attributes.logo.data.attributes.url} alt={checkBox.attributes.logo.data.attributes.alternativeText} className="w-7 h-7"/>
+      <label htmlFor="checkBox" className="text-white text-xl flex gap-2 items-center">
         {checkBox.attributes.nom}
       </label>
       <input

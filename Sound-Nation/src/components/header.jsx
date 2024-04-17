@@ -44,7 +44,7 @@ export const Header = () => {
           <img
             src="/images/logo.png"
             alt="Logo du festival Sound Nation"
-            className="ml-2 mt-2 mb-4 hover:opacity-80"
+            className="ml-2 mt-2 mb-4 hover:opacity-80 w-[6em] h-[5em]"
           />
         </a>
       </div>
@@ -58,7 +58,7 @@ export const Header = () => {
               <img
                 src={reseau.path}
                 alt={reseau.description}
-                className="w-[1.5em] active:opacity-60"
+                className="w-[1.5em] h-[1.5em] active:opacity-60"
               />
             </a>
           ))}
@@ -69,12 +69,12 @@ export const Header = () => {
         <img
           src="/images/fr 1.svg"
           alt="drapeau français"
-          className="w-6 hover:opacity-80"
+          className="w-6 h-5 hover:opacity-80"
         />
         <img
           src="/images/gb 1.svg"
           alt="drapeau du Royaume-Uni"
-          className="w-6 hover:opacity-80"
+          className="w-6 h-5 hover:opacity-80"
         />
       </div>
     </header>
