@@ -3,7 +3,7 @@ import React from "react";
 export const DisplayPartenaireCat = ({ cat, data }) => {
   return (
     <div>
-      <h2 className="text-white flex justify-center text-3xl mb-8 underline mt-[2em] ">
+      <h2 className="text-white flex justify-center text-[1.5rem] mb-8 underline mt-[2em] ">
         {cat}
       </h2>
       <div className="flex flex-row flex-wrap justify-center">

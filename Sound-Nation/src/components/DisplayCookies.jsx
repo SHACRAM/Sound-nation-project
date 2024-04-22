@@ -2,10 +2,11 @@ export const DisplayCookies = () => {
   return (
     <div className="p-10">
       <section className="bg-black p-10 rounded-lg">
-        <div className="bg-[#71A984] rounded-lg p-5 flex flex-col gap-8">
-          <h1 className="text-3xl underline flex flex-row justify-center">
+      <h1 className="text-[2rem] flex flex-row justify-center text-white mb-3">
             Gestion des cookies
           </h1>
+        <div className="bg-[#71A984] rounded-lg p-5 flex flex-col gap-8">
+          
           <p className="text-[1.2rem]">
             Si vous déposez un commentaire sur notre site, il vous sera proposé
             d’enregistrer votre nom, adresse e-mail et site dans des cookies.

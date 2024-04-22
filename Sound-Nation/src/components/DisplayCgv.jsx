@@ -4,7 +4,7 @@ export const DisplayCgv = () => {
     <Layout>
       <section className="p-10">
         <div className="bg-black p-8 rounded-lg flex flex-col gap-10">
-          <h1 className="text-[white] text-2xl">
+          <h1 className="text-[white] text-[2rem] flex justify-center">
             Conditions Générales de Vente (CGV)
           </h1>
           <p className="text-[white]">
@@ -13,7 +13,7 @@ export const DisplayCgv = () => {
             ci-après dénommé "le Festival".
           </p>
 
-          <h2 className="text-[white] underline text-xl">
+          <h2 className="text-[white] underline text-[1.5rem]">
             1. Billetterie et Accès
           </h2>
           <div className="bg-[#71A984] p-5 rounded-lg">
@@ -34,7 +34,7 @@ export const DisplayCgv = () => {
               consignes de sécurité établies par les organisateurs.
             </p>
           </div>
-          <h2 className="text-[white] underline text-xl">
+          <h2 className="text-[white] underline text-[1.5rem]">
             2. Annulation et Remboursement
           </h2>
           <div className="bg-[#71A984] p-5 rounded-lg">
@@ -54,7 +54,7 @@ export const DisplayCgv = () => {
             </p>
           </div>
 
-          <h2 className="text-[white] underline text-xl">
+          <h2 className="text-[white] underline text-[1.5rem]">
             3. Responsabilités et Sécurité
           </h2>
           <div className="bg-[#71A984] p-5 rounded-lg">
@@ -78,7 +78,7 @@ export const DisplayCgv = () => {
             </p>
           </div>
 
-          <h2 className="text-[white] underline text-xl">
+          <h2 className="text-[white] underline text-[1.5rem]">
             4. Propriété Intellectuelle
           </h2>
           <div className="bg-[#71A984] p-5 rounded-lg">

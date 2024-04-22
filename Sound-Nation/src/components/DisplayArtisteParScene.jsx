@@ -6,9 +6,9 @@ export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
   return (
     <div>
       <Element name={cat} className="bg-black m-10 p-5 rounded-lg">
-        <h2 className="text-white text-[3rem] flex justify-center">
+        <h1 className="text-white text-[2rem] flex justify-center">
           {"Scène " + cat}
-        </h2>
+        </h1>
         <div className="flex flex-wrap gap-2 justify-center">
           {sceneCat.map((scene) => (
             <Link

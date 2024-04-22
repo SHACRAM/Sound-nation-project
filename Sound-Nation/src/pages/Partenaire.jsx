@@ -46,7 +46,7 @@ export const Partenaire = () => {
     return (
       <Layout>
         <div className="bg-black m-10 rounded-lg mb-[8em] pt-5 pb-5">
-          <h1 className="text-white text-[2.5rem] flex justify-center">
+          <h1 className="text-white text-[2rem] flex justify-center">
             Nos partenaires
           </h1>
           {partenaireCat.map((cat) => (

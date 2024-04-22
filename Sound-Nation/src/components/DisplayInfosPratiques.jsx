@@ -4,7 +4,7 @@ export const DisplayInfosPratiques = () => {
   return (
     <div className="bg-black rounded-lg p-10 flex-col mt-10 mb-[3.5em]">
       <div>
-        <h1 className="text-[white] flex justify-center mb-[2em] text-3xl">
+        <h1 className="text-[white] flex justify-center mb-[2rem] text-3xl">
           Infos pratiques
         </h1>
       </div>

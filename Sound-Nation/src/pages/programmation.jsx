@@ -35,7 +35,7 @@ export const Programmation = () => {
     return (
       <Layout>
         <div className="bg-black m-10 rounded-lg flex flex-col items-center mb-10">
-          <h1 className="text-white flex justify-center p-5 mb-5 text-3xl">
+          <h1 className="text-white flex justify-center p-5 mb-5 text-[2rem]">
             Programmation
           </h1>
           <FilterProvider>

@@ -4,7 +4,7 @@ export const DisplayDonneespersonnelles = () => {
       <h1 className="text-[white] text-[1.6rem] mb-5">Données personnelles</h1>
       <section className="flex flex-col gap-8 p-5">
         <div className="bg-[#71A984] rounded-lg p-3 flex flex-col gap-4">
-          <h2 className="text-[black] text-xl underline">
+          <h2 className="text-[black] text-[1.5rem] underline">
             Utilisation et transmission de vos données personnelles
           </h2>
           <p className="text-[black]">
@@ -13,7 +13,7 @@ export const DisplayDonneespersonnelles = () => {
           </p>
         </div>
         <div className="bg-[#023E33] rounded-lg p-3 flex flex-col gap-4">
-          <h2 className="text-[white] text-xl underline">
+          <h2 className="text-[white] text-[1.5rem] underline">
             Durées de stockage de vos données
           </h2>
           <p className="text-[white]">
@@ -29,7 +29,7 @@ export const DisplayDonneespersonnelles = () => {
           </p>
         </div>
         <div className="bg-[#71A984] rounded-lg p-3 flex flex-col gap-4">
-          <h2 className="text-[black] text-xl underline">
+          <h2 className="text-[black] text-[1.5rem] underline">
             Les droits que vous avez sur vos données
           </h2>
           <p className="text-[black]">
@@ -43,7 +43,7 @@ export const DisplayDonneespersonnelles = () => {
           </p>
         </div>
         <div className="bg-[#023E33] rounded-lg p-3 flex flex-col gap-4">
-          <h2 className="text-[white] text-xl underline">
+          <h2 className="text-[white] text-[1.5rem] underline">
             Où vos données sont envoyées
           </h2>
           <p className="text-[white]">

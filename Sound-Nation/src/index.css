@@ -15,6 +15,7 @@ html,
 body {
   font-family: "Rubik";
   background-image: url("../images/BackGroundCloud.webp");
+  font-size: 16px;
   background-size: contain;
   background-repeat: repeat;
 }

@@ -19,7 +19,7 @@ export const HomePage = () => {
         </p>
       </div>
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center ">
-        <h2 className="text-white mt-2 text-[1.8rem] underline mb-[3em]">
+        <h2 className="text-white mt-2 text-[1.5rem] underline mb-[3em]">
           En 2024 Sound Nation revient dans
         </h2>
         <CountDown />
