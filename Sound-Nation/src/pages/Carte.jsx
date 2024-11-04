@@ -33,7 +33,7 @@ export const Carte = () => {
     if (currentDate && currentHour && dataGroupe) {
       const concertsEnCours = dataGroupe.filter((groupe) => {
         return (
-          groupe.attributes.horaire === currentHour + "h" &&
+          groupe.attributes.horaire === currentHour.toString()  &&
           groupe.attributes.jour === currentDate
         );
       });
@@ -53,7 +53,7 @@ export const Carte = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/groupes?populate=*"
+          "https://appetizing-appliance-030f2d236d.strapiapp.com/api/groupes?populate=*"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -74,7 +74,7 @@ export const Carte = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/map-places?populate=*"
+          "https://appetizing-appliance-030f2d236d.strapiapp.com/api/map-places?populate=*"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -92,7 +92,8 @@ export const Carte = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Chargement en cours...</p>;
+    return <div className="bg-black rounded-lg m-10 mb-[5em] flex justify-center"><div className="p-[10em] flex flex-col items-center"><p className="text-white m-10">Chargement en cours...</p> <img src="/images/logo.jpg" alt="Logo du site Sound Nation" className="h-[10em] w-[10em] animate-bounce" /></div></div>
+    
   } else
     return (
       <Layout>

@@ -9,7 +9,7 @@ export const ProgScene = ({ nom, jour, heure, image, alt }) => {
           <div>
             <p className="text-white flex gap-3">
               <img
-                src="../public/images/calendrier.png"
+                src="/images/calendrier.png"
                 alt="logo calendrier"
                 className="w-[1.5em]"
               />
@@ -19,7 +19,7 @@ export const ProgScene = ({ nom, jour, heure, image, alt }) => {
           <div>
             <p className="text-white flex gap-3">
               <img
-                src="../public/images/horloge.png"
+                src="/images/horloge.png"
                 alt="logo horloge"
                 className="w-[1.5em]"
               />

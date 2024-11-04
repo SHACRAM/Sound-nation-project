@@ -30,7 +30,7 @@ export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
                 key={artiste.id}
                 nom={artiste.attributes.nom}
                 image={
-                  "http://localhost:1337" +
+                  
                   artiste.attributes.Image.data.attributes.url
                 }
                 alt={artiste.attributes.Image.data.attributes.alternativeText}

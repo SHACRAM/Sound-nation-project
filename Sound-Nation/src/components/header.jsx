@@ -40,7 +40,7 @@ export const Header = () => {
   return (
     <header className="bg-black flex justify-between">
       <div>
-        <a href="https://sound-nation-f5c67.firebaseapp.com/">
+        <a href="http://localhost:5173/">
           <img
             src="/images/logo.png"
             alt="Logo du festival Sound Nation"
@@ -64,18 +64,6 @@ export const Header = () => {
           ))}
           ;
         </div>
-      </div>
-      <div className="flex gap-1.5 items-start mt-2 mr-2">
-        <img
-          src="/images/fr 1.svg"
-          alt="drapeau français"
-          className="w-6 h-5 hover:opacity-80"
-        />
-        <img
-          src="/images/gb 1.svg"
-          alt="drapeau du Royaume-Uni"
-          className="w-6 h-5 hover:opacity-80"
-        />
       </div>
     </header>
   );

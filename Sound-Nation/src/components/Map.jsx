@@ -1,6 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import "leaflet/dist/leaflet.js";
 
+
 import { useRef, useState } from "react";
 import {
   Circle,
@@ -60,7 +61,7 @@ export const MyMap = ({
           >
             Agrandir la carte
             <img
-              src="./public/images/fullScreen.png"
+              src="/images/fullScreen.png"
               alt="Bouton pour agrandir la carte"
               className="w-[1.5em]"
             />
@@ -76,7 +77,7 @@ export const MyMap = ({
             <button onClick={desactiveFullScreen}>
               <img
                 className="w-[3em] border-[2px] border-black rounded-lg p-1 h-10 shadow-xl text-sm flex gap-2 active:opacity-30 items-center"
-                src="./public/images/fermer.png"
+                src="/images/fermer.png"
                 alt="bouton permettant de fermer la carte en plein écran"
               />
             </button>
@@ -111,7 +112,7 @@ export const MyMap = ({
                             </div>
                             <img
                               src={
-                                "http://localhost:1337" +
+                                
                                 concertParScene[marker.nom][0].attributes.Image
                                   .data.attributes.url
                               }
@@ -128,11 +129,11 @@ export const MyMap = ({
                               de&nbsp;
                               {
                                 concertParScene[marker.nom][0].attributes
-                                  .horaire
+                                  .horaire + "h"
                               }
-                              &nbsp; à {currentHour + 1 + "h"}
+                              &nbsp; à {parseInt(currentHour) + 1 + "h"}
                               <img
-                                src="./public/images/onAir.png"
+                                src="/images/onAir.png"
                                 alt="logo qui représente un concert en cours sur la scène"
                                 className="animate-pulse"
                               />
@@ -144,7 +145,7 @@ export const MyMap = ({
                               {"Scène " + marker.nom}
                             </div>
                             <img
-                              src="./public/images/offLine.jpg"
+                              src="/images/offLine.jpg"
                               alt="Pas de concert en cours"
                               className="w-[10em] rounded-xl"
                             />
