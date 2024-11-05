@@ -74,7 +74,6 @@ export const Programmation = () => {
         <div className="bg-black m-10 rounded-lg flex flex-col items-center mb-10">
           <h1 className="text-white flex justify-center p-5 mb-5 text-[2rem]">
             Programmation
-            {console.log(dataToDisplay)}
           </h1>
             <Filtrage uniqueDate={uniqueDate} uniqueHour={uniqueHour} uniqueScene={uniqueScene} setDataFilter={setDataFilter} dataFilter={dataFilter} isChecked={isChecked} setIsChecked={setIsChecked}  />
             <AffichageGroupe data={dataToDisplay} />

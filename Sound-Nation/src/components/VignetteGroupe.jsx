@@ -2,10 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export const VignetteGroupe = ({ groupe }) => {
-  const nom = groupe.groupe_name;
-  const image = encodeURIComponent('http://localhost:3000/'+ groupe.groupe_image_path);
-  const alt = groupe.groupe_image_alt;
-  const bio = encodeURIComponent(groupe.groupe_bio);
+  const id = groupe.id;
   return (
     <div>
       <div
@@ -26,7 +23,7 @@ export const VignetteGroupe = ({ groupe }) => {
         <p className="text-white text-[1.2rem]">{`Scène ${groupe.groupe_scene}`}</p>
         <NavLink
           to={{
-            pathname: `/EnSavoirPlus/${groupe.id}`,
+            pathname: `/EnSavoirPlus/${id}`,
           }}
         >
           <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5]">

@@ -12,8 +12,8 @@ export const EnSavoirPlus = () => {
   useEffect(() => {
     const getData = async () => {
 
-      try{const response = await axios.get('http://localhost:3000/api/groupes/${id}');
-        setGroupe(response.data.data);
+      try{const response = await axios.get(`http://localhost:3000/api/groupes/${id}`);
+        setGroupe(response.data.data[0]);
       } catch (error) {
         console.log("Erreur lors de la récupération des données");
       }
@@ -34,6 +34,7 @@ export const EnSavoirPlus = () => {
     <Layout>
       <div className="bg-black m-10 p-10 flex flex-col items-center gap-[4em] rounded-xl">
         <h1 className="text-white text-[1.5rem] underline">{groupe.groupe_name}</h1>
+        
         <img
           src={`http://localhost:3000/${groupe.groupe_image_path}`}
           alt={groupe.groupe_image_alt}
