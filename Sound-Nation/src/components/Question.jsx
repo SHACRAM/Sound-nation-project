@@ -11,7 +11,7 @@ export const Question = ({ id, question, reponse }) => {
     <div key={id}>
       <ul>
         <li
-          className={`text-[white] bg-[#023E33] p-2 rounded-lg mt-10 w-[100%] relative z-10 flex flex-row justify-center ${
+          className={`text-[white] bg-[#023E33] p-2 rounded-lg mt-10 w-[100%] relative z-20 flex flex-row justify-center ${
             isOpen ? "rounded-b-none" : ""
           }`}
         >
