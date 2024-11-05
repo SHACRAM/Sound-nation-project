@@ -1,4 +1,4 @@
-import { Nav } from "../components/Nav";
+// import { Nav } from "../components/Nav";
 import { Header } from "../components/Header";
 import { DisplayCookies } from "../components/DisplayCookies";
 
@@ -11,9 +11,9 @@ export const Cookies = () => {
       <section>
         <DisplayCookies />
       </section>
-      <nav>
+      {/* <nav>
         <Nav />
-      </nav>
+      </nav> */}
     </div>
   );
 };

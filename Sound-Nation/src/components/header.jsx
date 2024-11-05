@@ -1,45 +1,29 @@
-const reseaux = [
-  {
-    name: "Facebook",
-    path: "/images/Facebook.svg",
-    description: "icone de facebook",
-    link: "https://www.facebook.com/",
-  },
-  {
-    name: "Twitter",
-    path: "/images/Twitter.svg",
-    description: "icone de twitter",
-    link: "https://www.twitter.com/",
-  },
-  {
-    name: "Youtube",
-    path: "/images/Youtube.svg",
-    description: "icone de youtube",
-    link: "https://www.youtube.com/",
-  },
-  {
-    name: "Instagram",
-    path: "/images/Instagram.svg",
-    description: "icone de instagram",
-    link: "https://www.instagram.com/",
-  },
-  {
-    name: "Linkedin",
-    path: "/images/Linkedin.svg",
-    description: "icone de linkedin",
-    link: "https://www.linkedin.com/",
-  },
-  {
-    name: "Snapchat",
-    path: "/images/Snapchat.svg",
-    description: "icone de snapchat",
-    link: "https://www.snapchat.com/",
-  },
-];
+import { ReseauxSociaux } from "./ReseauxSociaux";
+import { NavLink } from "react-router-dom";
+import { NavBarMobile } from "./NavBarMobile";
+import { NavBarDesktop } from "./NavBarDesktop";
+import { useState } from "react";
 export const Header = () => {
+  const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
+  const [menuClass, setMenuClass] = useState('menu');
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  const updateMenu = ()=>{
+    if(!isMenuClicked){
+        setBurgerClass('burger-bar clicked');
+        setMenuClass('menu visible');
+    } else{
+        setBurgerClass('burger-bar unclicked');
+        setMenuClass('menu');  
+    }
+    setIsMenuClicked(!isMenuClicked);
+}
+
+
+
   return (
-    <header className="bg-black flex justify-between">
-      <div>
+    <header className="bg-black flex flex-col">
+      <div className="flex justify-between">
         <a href="http://localhost:5173/">
           <img
             src="/images/logo.png"
@@ -47,23 +31,15 @@ export const Header = () => {
             className="ml-2 mt-2 mb-4 hover:opacity-80 w-[6em] h-[5em]"
           />
         </a>
-      </div>
-      <div className="flex flex-col items-center">
-        <p className="text-white text-[0.8rem] mt-[1em] mb-2 pr-4 ">
-          Suivez-nous sur nos réseaux :
-        </p>
-        <div className="flex gap-4">
-          {reseaux.map((reseau) => (
-            <a href={reseau.link} target="blank" key={reseau.name}>
-              <img
-                src={reseau.path}
-                alt={reseau.description}
-                className="w-[1.5em] h-[1.5em] active:opacity-60"
-              />
-            </a>
-          ))}
-          ;
+        <div className="sm:hidden">
+          <NavBarMobile burgerClass={burgerClass} menuClass={menuClass} updateMenu={updateMenu} />
         </div>
+        <div className="hidden sm:flex">
+          <NavBarDesktop/>
+        </div>
+      </div>
+      <div>
+        <ReseauxSociaux />
       </div>
     </header>
   );

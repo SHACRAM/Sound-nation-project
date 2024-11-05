@@ -2,7 +2,7 @@ import React from "react";
 
 export const CountDown = () => {
   const currentDate = new Date();
-  const targetDate = new Date(2024, 6, 22, 19, 0, 0);
+  const targetDate = new Date(2025, 6, 22, 19, 0, 0);
   let difference = targetDate - currentDate;
   const day = Math.floor(difference / (1000 * 60 * 60 * 24));
   difference -= day * (1000 * 60 * 60 * 24);

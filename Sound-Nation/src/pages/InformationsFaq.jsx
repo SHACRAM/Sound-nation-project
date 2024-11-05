@@ -1,7 +1,7 @@
 import { DisplayInfosPratiques } from "../components/DisplayInfosPratiques";
 import { Faq } from "../components/Faq";
 import { Header } from "../components/Header";
-import { Nav } from "../components/Nav";
+// import { Nav } from "../components/Nav";
 
 export const InformationsFaq = () => {
   return (
@@ -13,9 +13,9 @@ export const InformationsFaq = () => {
         <Faq />
         <DisplayInfosPratiques />
       </div>
-      <nav>
+      {/* <nav>
         <Nav />
-      </nav>
+      </nav> */}
     </div>
   );
 };
