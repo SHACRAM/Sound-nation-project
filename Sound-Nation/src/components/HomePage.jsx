@@ -1,12 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CountDown } from "./CountDown";
-import { InstallPWA } from "./PwaInstall";
+
 
 export const HomePage = () => {
   return (
     <div>
-      <InstallPWA />
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center">
         <img
           className="rounded-lg w-[100%]"
