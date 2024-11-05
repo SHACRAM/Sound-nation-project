@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <InformationsFaq />,
   },
   {
-    path: "/EnSavoirPlus/:id/:nom/:bio/:alt/:image",
+    path: "/EnSavoirPlus/:id",
     element: <EnSavoirPlus />,
   },
   {
