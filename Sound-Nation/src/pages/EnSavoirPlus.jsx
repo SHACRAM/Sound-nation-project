@@ -3,7 +3,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import axios from "axios";
-
+// Page qui affiche la biographie d'un groupe
 export const EnSavoirPlus = () => {
   const { id } = useParams();
   const [groupe, setGroupe] = useState(null);
@@ -32,7 +32,7 @@ export const EnSavoirPlus = () => {
   }
   return (
     <Layout>
-      <div className="bg-black m-10 p-10 flex flex-col items-center gap-[4em] rounded-xl">
+      <div className="bg-black m-7 p-2 flex flex-col items-center gap-[4em] rounded-xl">
         <h1 className="text-white text-[1.5rem] underline">{groupe.groupe_name}</h1>
         
         <img
@@ -40,10 +40,10 @@ export const EnSavoirPlus = () => {
           alt={groupe.groupe_image_alt}
           className="w-[15em] rounded-[30px]"
         />
-        <p className="text-white text-[1.2rem] flex flex-col items-center w-[80%] bg-[#023E33] p-3 rounded-lg">
+        <p className="text-white text-[1.2rem] flex flex-col items-center w-[80%] bg-[#023E33] p-2 rounded-lg">
           {groupe.groupe_bio}
         </p>
-        <NavLink to="/Programmation">
+        <NavLink className="mb-3" to="/Programmation">
           <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5]">
             Retour à la programmation
           </button>
