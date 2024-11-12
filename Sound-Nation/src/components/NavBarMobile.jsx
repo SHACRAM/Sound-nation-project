@@ -17,6 +17,7 @@ export const NavBarMobile = ({burgerClass, menuClass, updateMenu}) => {
         <div className={`flex flex-col items-center ${menuClass}`}>
             {/* TODO ajouter la fonction pour se déconnecter */}
             <NavLink to={'/Programmation'}  className='text-white w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Programmation</NavLink>
+            <NavLink to={'/Concert'}  className='text-white w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Concert</NavLink>
             <NavLink to={"/Partenaire"} className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Partenaires</NavLink>
             <NavLink to={"/Carte"} className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Carte</NavLink>
             <a

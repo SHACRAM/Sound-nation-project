@@ -23,7 +23,7 @@ export const Header = () => {
 
   return (
     <header className="bg-black flex flex-col">
-      <div className="flex justify-between">
+      <div className="flex justify-between sm:flex-col sm:items-center lg:flex-row">
         <a href="http://localhost:5173/">
           <img
             src="/images/logo.png"
@@ -38,7 +38,7 @@ export const Header = () => {
           <NavBarDesktop/>
         </div>
       </div>
-      <div>
+      <div className="mt-4">
         <ReseauxSociaux />
       </div>
     </header>

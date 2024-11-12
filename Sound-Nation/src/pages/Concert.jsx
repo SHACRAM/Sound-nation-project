@@ -1,45 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { DisplayArtisteParScene } from "../components/DisplayArtisteParScene";
 import { Layout } from "../components/Layout";
-
+import axios from "axios";
+// Page qui affiche les groupes triés par scène
 export const Concert = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const [sceneCat, setSceneCat] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://appetizing-appliance-030f2d236d.strapiapp.com/api/groupes?populate=*"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-
-        const jsonData = await response.json();
-        setData(jsonData.data);
+    const getData = async ()=>{
+      const response = await axios.get('http://localhost:3000/api/groupes');
+      if(response.data.status){
+        setData(response.data.data);
         setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setIsLoading(false);
+      }else{
+        console.log(response.data.message);
+        setIsLoading(true);
       }
-    };
-    fetchData();
+    }
+    getData();
   }, []);
 
+
   useEffect(() => {
-    if (data) {
-      const typesUniques = {};
-      data.forEach((scene) => {
-        if (!typesUniques[scene.attributes.scene]) {
-          typesUniques[scene.attributes.scene] = true;
-        }
-      });
-      const typesUniquesArray = Object.keys(typesUniques);
-      setSceneCat(typesUniquesArray);
+    if(data){
+      const tempScene = [];
+
+      data.map((groupe)=>(
+        tempScene.push(String(groupe.groupe_scene))
+      ))
+      setSceneCat([... new Set(tempScene.sort((a, b)=>a-b))]);
     }
   }, [data]);
+
+
+
   if (isLoading) {
     return <div className="bg-black rounded-lg m-10 mb-[5em] flex justify-center"><div className="p-[10em] flex flex-col items-center"><p className="text-white m-10">Chargement en cours...</p> <img src="/images/logo.jpg" alt="Logo du site Sound Nation" className="h-[10em] w-[10em] animate-bounce" /></div></div>;
   } else
@@ -54,6 +50,7 @@ export const Concert = () => {
               sceneCat={sceneCat}
             />
           ))}
+
         </div>
       </Layout>
     );

@@ -45,7 +45,7 @@ export const EnSavoirPlus = () => {
         </p>
         <NavLink className="mb-3" to="/Programmation">
           <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5]">
-            Retour à la programmation
+            Aller à la programmation
           </button>
         </NavLink>
       </div>

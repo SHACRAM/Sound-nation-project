@@ -12,11 +12,13 @@ export const Filtrage = ({uniqueDate, uniqueScene, uniqueHour, setDataFilter, da
 
 
   const handleAllGroupes = (e) => {
-    if (e.target.checked) {
+    const checked = e.target.checked;
+    setIsChecked(checked);
+    localStorage.setItem('allGroupes', checked);
+    
+    if (checked) {
       setDataFilter([]);
-      setIsChecked(true);
-    } else {
-      setIsChecked(false);
+      localStorage.removeItem('dataFilter');
     }
   };
 

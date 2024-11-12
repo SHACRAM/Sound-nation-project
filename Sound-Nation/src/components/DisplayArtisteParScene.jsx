@@ -1,7 +1,7 @@
 import React from "react";
 import { Element, Link } from "react-scroll";
 import { ProgScene } from "./ProgScene";
-
+// Composant qui permet d'afficher les groupes triés par scène
 export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
   return (
     <div>
@@ -24,18 +24,19 @@ export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
           ))}
         </div>
         <div className="flex flex-wrap gap-8 justify-center mt-[5em]">
-          {data.map((artiste) =>
-            artiste.attributes.scene === cat ? (
+          {data.map((groupe) =>
+            groupe.groupe_scene === parseInt(cat) ? (
               <ProgScene
-                key={artiste.id}
-                nom={artiste.attributes.nom}
+                key={groupe.id}
+                id={groupe.id}
+                nom={groupe.groupe_name}
                 image={
                   
-                  artiste.attributes.Image.data.attributes.url
+                  groupe.groupe_image_path
                 }
-                alt={artiste.attributes.Image.data.attributes.alternativeText}
-                jour={artiste.attributes.jour}
-                heure={artiste.attributes.horaire + " h"}
+                alt={groupe.groupe_image_alt}
+                jour={groupe.groupe_date}
+                heure={groupe.groupe_hour + " h"}
               />
             ) : null
           )}

@@ -5,7 +5,7 @@ export const FiltrageMap = ({ dataMap, uniqueCategories, setCheckBoxToDisplay}) 
   const [selectedCategory, setSelectedCategory] = useState([]);
 
   useEffect(() => {
-    const defaultCategory = ["Scène", "Entrée"];
+    const defaultCategory = ["Scène", "Entrée", "Toilettes"];
     setSelectedCategory(defaultCategory);
     setCheckBoxToDisplay(dataMap.filter((item) => defaultCategory.includes(item.place_category)));
   },[dataMap, setCheckBoxToDisplay]);

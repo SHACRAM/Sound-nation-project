@@ -1,10 +1,14 @@
 import React from "react";
-
-export const ProgScene = ({ nom, jour, heure, image, alt }) => {
+import { NavLink } from "react-router-dom";
+//Composant qui permet de créer la fiche d'information d'un groupe
+export const ProgScene = ({ id, nom, jour, heure, image, alt }) => {
   return (
-    <div>
-      <div className="border">
-        <img src={image} alt={alt} className="w-[15em]" />
+    <NavLink to={{
+      pathname: `/EnSavoirPlus/${id}`,
+    }} className="hover:scale-110 hover:transition-all duration-300">
+      <div>
+      <div className="border hover:rounded-2xl hover:transition-all duration-200">
+        <img src={`http://localhost:3000/${image}`} alt={alt} className="w-[15em] p-2 rounded-2xl" />
         <div className="p-3 flex flex-col gap-3">
           <div>
             <p className="text-white flex gap-3">
@@ -32,5 +36,7 @@ export const ProgScene = ({ nom, jour, heure, image, alt }) => {
         </div>
       </div>
     </div>
+    </NavLink>
+    
   );
 };

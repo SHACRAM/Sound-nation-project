@@ -3,7 +3,7 @@ import { AffichageGroupe } from "../components/AffichageGroupe";
 import { Filtrage } from "../components/Filtrage";
 import { Layout } from "../components/Layout";
 import axios from "axios";
-// Page de la programmation
+// Page de la programmation du festival
 export const Programmation = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -13,6 +13,23 @@ export const Programmation = () => {
   const [message, setMessage] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
   const [isChecked, setIsChecked] = useState(true);
+
+  useEffect(() => {
+    const storedDataFilter = localStorage.getItem("dataFilter");
+    if (storedDataFilter) {
+      setDataFilter(JSON.parse(storedDataFilter));
+    }
+    const storedAllGroupes = localStorage.getItem("allGroupes") === "true";
+    setIsChecked(storedAllGroupes);  
+  }, []); 
+
+  useEffect(() => {
+    if (isChecked) {
+      localStorage.setItem('allGroupes', JSON.stringify(true));
+    }
+  }, [isChecked]);
+
+  
 
   useEffect(() => {
     const getData = async () => {
