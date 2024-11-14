@@ -12,6 +12,8 @@ import { InformationsFaq } from "./pages/InformationsFaq";
 import { Partenaire } from "./pages/Partenaire";
 import { Programmation } from "./pages/Programmation";
 import { ConcertEnCours } from "./pages/ConcertEnCours";
+import { Login } from "./pages/Login";
+import { Inscription } from "./pages/Inscription";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
   {
     path: "/ConcertEnCours",
     element: <ConcertEnCours />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "/Inscription",
+    element: <Inscription />,
   },
 ]);
 

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+// Composant qui gère l'affichage de la nivigation mobile
+export const NavBarMobile = ({burgerClass, menuClass, updateMenu, userName, isAuthenticated, handleLogOut}) => {
 
-export const NavBarMobile = ({burgerClass, menuClass, updateMenu}) => {
-  
+  useEffect(() => {},[isAuthenticated]);
 
   return (
     <div>
@@ -15,7 +16,6 @@ export const NavBarMobile = ({burgerClass, menuClass, updateMenu}) => {
         </nav>
 
         <div className={`flex flex-col items-center ${menuClass}`}>
-            {/* TODO ajouter la fonction pour se déconnecter */}
             <NavLink to={'/Programmation'}  className='text-white w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Programmation</NavLink>
             <NavLink to={'/Concert'}  className='text-white w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Concert</NavLink>
             <NavLink to={"/Partenaire"} className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Partenaires</NavLink>
@@ -28,8 +28,17 @@ export const NavBarMobile = ({burgerClass, menuClass, updateMenu}) => {
               >Billetterie
             </a>
             <NavLink to={"/InformationsFaq"} className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Informations</NavLink>
-            {/* {isAuthenticated && 
-            <button className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Se déconnecter</button>} */}
+            {isAuthenticated ? 
+            <div className="flex w-[100%] items-center justify-around mb-2">
+              <div className="flex items-center gap-2">
+                <img src="/public/images/User.png" alt="Logo utilisateur" className="w-5 h-5" />
+                <NavLink className='text-white flex justify-center pb-2 pt-2 text-[1rem]' to="">{userName}</NavLink>
+              </div>
+              <button className='text-[#008BFF] flex justify-center pb-2 pt-2 text-[0.8rem]' onClick={()=>handleLogOut()}>Se déconnecter</button>
+            </div>
+             
+            :<NavLink className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]' to="/Login">Se connecter</NavLink>
+              }
         </div>
 
     </div>

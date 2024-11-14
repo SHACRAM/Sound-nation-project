@@ -3,7 +3,8 @@ import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Layout } from "../components/Layout";
 import axios from "axios";
-// Page qui affiche la biographie d'un groupe
+// Page qui affiche la biographie d'un groupe en fonction de son ID
+
 export const EnSavoirPlus = () => {
   const { id } = useParams();
   const [groupe, setGroupe] = useState(null);
