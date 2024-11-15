@@ -1,8 +1,10 @@
 import React from "react";
 import { Layout } from "../components/Layout";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+
 import axios from 'axios';
 // Page qui permet à un utilisateur de se connecter à son compte
 
@@ -12,6 +14,10 @@ export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isConnected, setIsConnected] = useState(null);
+    const {connectInformation, setConnectInformation} = useContext(AuthContext);
+    
+    
+    
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -20,17 +26,22 @@ export const Login = () => {
             const response = await axios.post('http://localhost:3000/api/authentication/signin', {email, password}, { withCredentials: true });
             if(response.status){
                 setMessage(response.data.message);
+                setConnectInformation(response.data.data);
                 setTimeout(()=>{
-                    navigate('/', {state: {userName: response.data.name}});
+                    navigate('/');
                 }, 2000);
                 setIsConnected(true);
             } else{
                 setMessage(response.data.message);
                 setIsConnected(false);
+                setConnectInformation(null);
+               
             }
         }catch(error){
-            setMessage('Erreur serveur, merci de réessayer ultérieurement');
+            setMessage('Erreur, merci de vérifier vos identifiants');
             setIsConnected(false);
+            setConnectInformation(null);
+            
         }
     }
 

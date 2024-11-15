@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
-// Composant qui gère l'affichage de la nivigation mobile
-export const NavBarMobile = ({burgerClass, menuClass, updateMenu, userName, isAuthenticated, handleLogOut}) => {
+import { AuthContext } from "../context/AuthContext";
+// Composant qui gère l'affichage de la navigation mobile
+export const NavBarMobile = ({burgerClass, menuClass, updateMenu, handleLogOut}) => {
+  const {connectInformation, setConnectInformation} = useContext(AuthContext);
 
-  useEffect(() => {},[isAuthenticated]);
+  useEffect(()=>{},[connectInformation]);
 
   return (
     <div>
@@ -28,11 +30,11 @@ export const NavBarMobile = ({burgerClass, menuClass, updateMenu, userName, isAu
               >Billetterie
             </a>
             <NavLink to={"/InformationsFaq"} className='text-white  w-[100%] flex justify-center pb-2 pt-2 text-[1.3rem]'>Informations</NavLink>
-            {isAuthenticated ? 
+            {connectInformation  ? 
             <div className="flex w-[100%] items-center justify-around mb-2">
               <div className="flex items-center gap-2">
                 <img src="/public/images/User.png" alt="Logo utilisateur" className="w-5 h-5" />
-                <NavLink className='text-white flex justify-center pb-2 pt-2 text-[1rem]' to="">{userName}</NavLink>
+                <NavLink className='text-white flex justify-center pb-2 pt-2 text-[1rem]' to="/MyAccount" >{connectInformation.user_name}</NavLink>
               </div>
               <button className='text-[#008BFF] flex justify-center pb-2 pt-2 text-[0.8rem]' onClick={()=>handleLogOut()}>Se déconnecter</button>
             </div>

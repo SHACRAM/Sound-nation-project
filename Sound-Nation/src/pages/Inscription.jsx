@@ -29,7 +29,7 @@ export const Inscription = () => {
 
 
         try{
-            const response = await axios.post('http://localhost:3000/api/user/signup', {email, identifiant, password, role}, { headers: { 'Content-Type': 'application/json' }});
+            const response = await axios.post('http://localhost:3000/api/users/signup', {email, identifiant, password, role}, { headers: { 'Content-Type': 'application/json' }});
             if(response.status=== 201){
                 setMessage(response.data.message);
                 setIsSuccess(true);
