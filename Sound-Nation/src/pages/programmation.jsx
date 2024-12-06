@@ -34,7 +34,7 @@ export const Programmation = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/groupes');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/groupes/public/groupes`);
         if(response.data.status){
           setData(response.data.data);
           const tempDate =[];
@@ -42,8 +42,8 @@ export const Programmation = () => {
           const tempScene =[];
           response.data.data.map((groupe)=>{
             tempDate.push(groupe.groupe_date);
-            tempHour.push(groupe.groupe_hour);
-            tempScene.push(groupe.groupe_scene);
+            tempHour.push(String(groupe.groupe_hour));
+            tempScene.push(String(groupe.groupe_scene));
           })
           setUniqueDate([...new Set(tempDate.reverse())]);
           setUniqueHour([...new Set(tempHour.sort((a, b)=>a-b))]);
@@ -67,12 +67,12 @@ export const Programmation = () => {
     }
   
     const dateFilters = dataFilter.filter((filter) => uniqueDate.includes(filter));
-    const hourFilters = dataFilter.filter((filter) => uniqueHour.includes(parseInt(filter)));
-    const sceneFilters = dataFilter.filter((filter) => uniqueScene.includes(parseInt(filter)));
+    const hourFilters = dataFilter.filter((filter) => uniqueHour.includes(filter));
+    const sceneFilters = dataFilter.filter((filter) => uniqueScene.includes(filter));
   
     const matchesDate = dateFilters.length === 0 || dateFilters.includes(groupe.groupe_date);
-    const matchesHour = hourFilters.length === 0 || hourFilters.includes(groupe.groupe_hour.toString());
-    const matchesScene = sceneFilters.length === 0 || sceneFilters.includes(groupe.groupe_scene.toString());
+    const matchesHour = hourFilters.length === 0 || hourFilters.includes(String(groupe.groupe_hour));
+    const matchesScene = sceneFilters.length === 0 || sceneFilters.includes(String(groupe.groupe_scene));
   
     return matchesDate && matchesHour && matchesScene;
   });
@@ -92,6 +92,7 @@ export const Programmation = () => {
           <h1 className="text-white flex justify-center p-5 mb-5 text-[2rem]">
             Programmation
           </h1>
+          
             <Filtrage uniqueDate={uniqueDate} uniqueHour={uniqueHour} uniqueScene={uniqueScene} setDataFilter={setDataFilter} dataFilter={dataFilter} isChecked={isChecked} setIsChecked={setIsChecked}  />
             <AffichageGroupe data={dataToDisplay} />
         </div>

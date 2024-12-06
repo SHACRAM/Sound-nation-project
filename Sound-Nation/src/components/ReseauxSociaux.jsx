@@ -44,7 +44,7 @@ export const ReseauxSociaux = () => {
 
 
     return( 
-    <div className="flex justify-center mb-2">
+    <div className="flex justify-center mb-3">
         <div className="flex justify-center gap-6 sm:gap-[3em]">
           {reseaux.map((reseau) => (
             <a href={reseau.link} target="blank" key={reseau.name}>

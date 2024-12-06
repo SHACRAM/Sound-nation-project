@@ -10,7 +10,7 @@ export const Concert = () => {
 
   useEffect(() => {
     const getData = async ()=>{
-      const response = await axios.get('http://localhost:3000/api/groupes');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/groupes/public/groupes`);
       if(response.data.status){
         setData(response.data.data);
         setIsLoading(false);

@@ -9,17 +9,21 @@ import { NavLink } from "react-router-dom";
 
 export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataMap,checkBoxToDisplay, dataGroupe}) => {
   const [groupeConcertActuel, setGroupeConcertActuel] = useState([]);
-  
   const options = {weekday : 'long', day: 'numeric', month: 'long'};
   const actualDate =  new Date();
   const actualHour = actualDate.getHours();
   const formattedDate = actualDate.toLocaleDateString('fr-FR', options);
+  const mapRef = useRef(null);
+
+
+  
   
 
 
 
   useEffect(() => {
     const tempGroupe = [];
+    if(dataGroupe){
     dataGroupe.forEach((groupe) => {
       const groupeDate = groupe.groupe_date;
       const lowerCaseDate = groupeDate.toLowerCase();
@@ -27,8 +31,37 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
         tempGroupe.push(groupe);
       }
     });
+  }
     setGroupeConcertActuel(tempGroupe);
   }, [dataGroupe, formattedDate, actualHour]);
+
+
+
+  function LocationMarker() {
+    const [position, setPosition] = useState(null);
+    const map = useMapEvents({
+      click() {
+        map.locate()
+      },
+      locationfound(e) {
+        setPosition(e.latlng)
+        map.flyTo(e.latlng, map.getZoom())
+      },
+    })
+  
+    return position === null ? null : (
+      <Marker position={position}>
+        <Popup>Vous êtes ici</Popup>
+      </Marker>
+    )
+  }
+
+
+  const requestLocation = () => {
+    mapRef.current.locate();
+  };
+
+
 
 
   return (
@@ -54,7 +87,8 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
 
           <button
             className="text-black flex  justify-center border-[2px] border-black rounded-lg p-1 h-10  text-sm active:opacity-80 items-center shadow-xl"
-          >
+            onClick={requestLocation}
+            >
             Activer la géolocalisation
           </button>
           {isFullScreen ? (
@@ -68,7 +102,7 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
           ) : null}
         </div>
         <div className="w-[100%] h-[100vh]">
-        <MapContainer center={[48.753924135730976, 2.4644180150457737]} zoom={16} scrollWheelZoom={false} className="w-[100%] h-[100%]">
+        <MapContainer center={[48.753924135730976, 2.4644180150457737]} zoom={16} scrollWheelZoom={false} className="w-[100%] h-[100%]" ref={mapRef} >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -77,11 +111,11 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
             <div key={index}>
                 <Marker position={[parseFloat(place.place_latitude),parseFloat(place.place_longitude)]}>
                    <Popup>
-                    <div className="w-[15em] flex flex-col items-center gap-3">
+                    <div className="w-[13em] flex flex-col items-center gap-3">
                       <h2 className="text-[1.5rem]">
                         {place.place_name}
                       </h2>
-                      <img  className="rounded" src={`http://localhost:3000/${place.place_image_path}`} alt={place.place_image_alt} />
+                      <img  className="rounded" src={`${import.meta.env.VITE_API_URL}/${place.place_image_path}`} alt={place.place_image_alt} />
                       <p className="text-[1rem]">{place.place_info_popup}</p>
                       {place.place_category === "Scène" ?
                       <div>
@@ -102,6 +136,7 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
                 <Circle center={[parseFloat(place.place_latitude),parseFloat(place.place_longitude)]} pathOptions={ {color:`${place.place_marker_color}`, fillColor:`${place.place_marker_color}`}} radius={place.place_marker_diametre} stroke={true}/>
             </div>
           ))}
+          <LocationMarker />
         </MapContainer>
         </div>
       </div>

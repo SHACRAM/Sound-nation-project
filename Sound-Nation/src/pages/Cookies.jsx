@@ -1,19 +1,19 @@
-// import { Nav } from "../components/Nav";
 import { Header } from "../components/Header";
 import { DisplayCookies } from "../components/DisplayCookies";
-
+import { useLocation } from "react-router-dom";
+// Page qui affiche les cookies
 export const Cookies = () => {
+  const location = useLocation();
+  const data = location.state;
+
+
+
   return (
     <div>
-      <header>
         <Header />
-      </header>
-      <section>
-        <DisplayCookies />
-      </section>
-      {/* <nav>
-        <Nav />
-      </nav> */}
+        <div>
+          <DisplayCookies data={data} />
+        </div>
     </div>
   );
 };

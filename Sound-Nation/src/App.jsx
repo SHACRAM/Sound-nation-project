@@ -1,7 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import { DisplayCgv } from "./components/DisplayCgv";
+import { DisplayCgu } from "./components/DisplayCgu";
 import { Accueil } from "./pages/Accueil";
 import { Carte } from "./pages/Carte";
 import { Concert } from "./pages/Concert";
@@ -12,6 +12,11 @@ import { InformationsFaq } from "./pages/InformationsFaq";
 import { Partenaire } from "./pages/Partenaire";
 import { Programmation } from "./pages/Programmation";
 import { ConcertEnCours } from "./pages/ConcertEnCours";
+import { Login } from "./pages/Login";
+import { Inscription } from "./pages/Inscription";
+import { MyAccount } from "./pages/MyAccount";
+import { ModifyMyInformation } from "./pages/ModifyMyInformation";
+import { ModifyMyPassword } from "./pages/ModifyMyPassword";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +44,8 @@ const router = createBrowserRouter([
     element: <Cookies />,
   },
   {
-    path: "/InformationsFaq/Cgv",
-    element: <DisplayCgv />,
+    path: "/InformationsFaq/Cgu",
+    element: <DisplayCgu />,
   },
   {
     path: "/Programmation",
@@ -57,6 +62,26 @@ const router = createBrowserRouter([
   {
     path: "/ConcertEnCours",
     element: <ConcertEnCours />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "/Inscription",
+    element: <Inscription />,
+  },
+  {
+    path: "/MyAccount",
+    element: <MyAccount />,
+  },
+  {
+    path: "/ModifyMyInformation/:email",
+    element: <ModifyMyInformation />,
+  },
+  {
+    path: "/ModifyMyPassword/:email",
+    element: <ModifyMyPassword />,
   },
 ]);
 

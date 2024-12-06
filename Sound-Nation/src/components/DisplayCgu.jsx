@@ -1,14 +1,18 @@
-import React from "react";
+import { Layout } from "../components/Layout";
 import ReactMarkdown from 'react-markdown';
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 
-// Composant qui affiche les textes des cookies
-export const DisplayCookies = ({data}) => {
 
+export const DisplayCgu = () => {
+  const location = useLocation();
+  const data = location.state
 
 
   return (
-    <div className="bg-black rounded-md m-4 p-4">
+    <Layout>
+     <div className="bg-black rounded-md m-4 p-4">
        <div>
         {data.map((item, index) => {
           return(
@@ -20,5 +24,6 @@ export const DisplayCookies = ({data}) => {
         })}
       </div>
     </div>
+    </Layout>
   );
 };
