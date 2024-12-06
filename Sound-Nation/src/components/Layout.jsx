@@ -1,9 +1,9 @@
 import React from "react";
 import { Header } from "./Header";
-export const Layout = ({ children, userName }) => {
+export const Layout = ({ children }) => {
   return (
     <div>
-      <Header userName={userName} />
+      <Header />
       {children}
     </div>
   );

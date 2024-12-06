@@ -1,17 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CountDown } from "./CountDown";
+import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
+import { DisplayFavoriteGroupe } from "./DisplayFavoriteGroupe";
 
-
+// Page qui affiche les éléments de la page d'accueil
 export const HomePage = () => {
+  const {connectInformation}= useContext(AuthContext);
   return (
     <div>
       <div className="bg-black m-10 p-10 rounded-lg flex flex-col items-center">
-        <img
+        {connectInformation ?  <DisplayFavoriteGroupe/> 
+        : <img
           className="rounded-lg w-[100%]"
           src="../images/homePageComp.webp"
           alt="Photo du festival Sound Nation 2023"
-        />
+        />}
+       
         <p className="text-white mt-[3em] text-[1.2rem] bg-[#023E33] p-3 rounded-lg">
           Après une édition 2024 courronnée de succés, Sound Nation revient
           cette année, pour vous faire vibrer au rythme des sound system.

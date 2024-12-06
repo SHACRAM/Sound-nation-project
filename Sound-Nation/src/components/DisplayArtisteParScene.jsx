@@ -5,7 +5,7 @@ import { ProgScene } from "./ProgScene";
 export const DisplayArtisteParScene = ({ cat, data, sceneCat }) => {
   return (
     <div>
-      <Element name={cat} className="bg-black m-10 p-5 rounded-lg">
+      <Element name={cat} className="bg-black m-3 p-5 rounded-lg">
         <h1 className="text-white text-[2rem] flex justify-center">
           {"Scène " + cat}
         </h1>

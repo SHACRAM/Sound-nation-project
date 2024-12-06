@@ -1,46 +1,42 @@
 import { Question } from "./Question";
-
-const questionsReponse = [
-  {
-    id: 1,
-    question: "Est-il possible d'acheter des billets sur place?",
-    reponse: "Oui, un point de vente sera présent à l'entrée du festival.",
-  },
-  {
-    id: 2,
-    question:
-      "Est-ce que le site du festival ainsi que les activités sur place sont accessibles aux personnes en fauteuil roulant?",
-    reponse:
-      "Toutes les infrastructures du festival ainsi que les activités sont accessibles aux personnes à mobilité réduite.",
-  },
-  {
-    id: 3,
-    question: "Y'a t'il de la restauration sur place?",
-    reponse:
-      "Plusieurs points de restaurations seront présents pendant toute la durée du festival, vous pourrez les retrouver grace à la carte présente sur notre application.",
-  },
-  {
-    id: 4,
-    question:
-      "Où trouver la programmation ainsi que les scènes sur lesquelles auront lieu les concerts?",
-    reponse:
-      "En téléchargant notre application vous pourrez suivre heure par heure la programmation des concerts ainsi que les points de rencontre des artistes.",
-  },
-];
-
+import axios from "axios";
+import { useState, useEffect } from "react";
+// Composant qui permet de récupérer les questions et réponses de la FAQ et de les envoyer au composant Question
 export const Faq = () => {
-  return (
-    <div className="bg-black rounded-lg p-10 flex-col">
-      <h1 className="text-white flex justify-center text-[2rem] mb-[2em]">FAQ</h1>
+  const [questionReponse, setQuestionReponse] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-      {questionsReponse.map((question) => (
-        <Question
-          id={question.id}
-          key={question.id}
-          question={question.question}
-          reponse={question.reponse}
-        />
-      ))}
+  const getQuestionsReponse = async () => {
+    try{
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/informations/public/faq`);
+      if(response.data.status){
+        setQuestionReponse(response.data.data);
+        setLoading(false);
+      }
+    }catch(error){
+      setLoading(true);
+    }
+  };
+
+  useEffect(() => {
+    getQuestionsReponse();
+  },[]);
+
+
+  return (
+    <div className="bg-black rounded-lg p-4 flex-col">
+      <h1 className="text-white flex justify-center text-[2rem]">FAQ</h1>
+      <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center">
+        {questionReponse.map((question, index) => (
+            <div key={index} className="flex w-fit">
+              <Question
+                id={question.id}
+                question={question.question}
+                reponse={question.reponse}
+            />
+            </div>
+        ))}
+      </div>
     </div>
   );
 };

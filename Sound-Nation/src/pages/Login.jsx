@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.post('http://localhost:3000/api/authentication/signin', {email, password}, { withCredentials: true });
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/authentication/signin`, {email, password}, { withCredentials: true });
             if(response.status){
                 setMessage(response.data.message);
                 setConnectInformation(response.data.data);
@@ -54,11 +54,11 @@ export const Login = () => {
                     <form className="flex flex-col items-start gap-5 mb-[1em]">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="email" className="text-white text-[1.2rem]">Email</label>
-                            <input type="email" className="rounded w-[15em]" onChange={(e)=>setEmail(e.target.value)} required/>
+                            <input type="email" className="rounded w-[15em] pl-1" onChange={(e)=>setEmail(e.target.value)} required/>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="password" className="text-white text-[1.2rem]">Mot de passe</label>
-                            <input type="password" className="rounded w-[15em]" onChange={(e)=>setPassword(e.target.value)}  required/>
+                            <input type="password" className="rounded w-[15em] pl-1" onChange={(e)=>setPassword(e.target.value)}  required/>
                         </div>
                         <button className="text-black bg-[#71A984] rounded-lg p-2 border active:bg-[#023E33] active:text-white hover:bg-[#93c9a5] ml-[4em] mt-5" onClick={handleLogin}>Connexion</button>
                     </form>

@@ -15,12 +15,14 @@ export const Header = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [disconnectMesssage, setDisconnectMessage] = useState('');
   const {connectInformation, setConnectInformation} = useContext(AuthContext);
+  const [cookieDiv, setCookieDiv] = useState(localStorage.getItem('cookie') === 'false' ? false : true);
+
   
 
 
 
   const handleLogOut = async()=>{
-    const response = await axios.get('http://localhost:3000/api/authentication/logOut', { withCredentials: true });
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/authentication/logOut`, { withCredentials: true });
     if(response.data.status){
         setDisconnectMessage(response.data.message);
         setConnectInformation(null);
@@ -46,6 +48,12 @@ export const Header = () => {
 }
 
 
+const handleCookie = ()=>{
+  setCookieDiv(false);
+  localStorage.setItem('cookie', 'false');
+}
+
+
 
   return (
     <header className="bg-black flex flex-col">
@@ -53,7 +61,7 @@ export const Header = () => {
         {connectInformation ?
           <div className="flex items-center gap-[2em]">
             <div className="flex items-center gap-2">
-              <img src="/public/images/User.png" alt="Logo utilisateur" className="w-5 h-5" />
+              <img src="/images/User.png" alt="Logo utilisateur" className="w-5 h-5" />
               <NavLink className='text-white flex justify-center pb-2 pt-2 text-[1rem] hover:underline' to="/MyAccount">{connectInformation.user_name}</NavLink>
             </div>
               <button className="text-[#008BFF] mr-3 hover:opacity-80" onClick={()=>handleLogOut()} >Se déconnecter</button>
@@ -81,6 +89,12 @@ export const Header = () => {
       <div className="mt-4 flex justify-center w-[100%]">
           <ReseauxSociaux />
       </div>
+      {cookieDiv ? 
+        <div className="h-[10em] w-full fixed bottom-0 bg-white opacity-90 p-3 flex flex-col items-center gap-2 lg:flex-row lg:gap-6 lg:items-center sm:h-[8em] md:h-[8em] lg:h-[5em] z-[1000]">
+            <p className="text-black md:w-[80%]">Ce site utilise des cookies pour améliorer votre expérience. Vos données restent confidentielles et ne seront ni partagées ni vendues à des tiers.</p>
+            <button className="text-blue-600 border border-blue-600 p-1 rounded-md mb-2 hover:bg-blue-600 hover:text-white" onClick={handleCookie} >J'ai compris</button>
+      </div> : null}
+      
     </header>
   );
 };

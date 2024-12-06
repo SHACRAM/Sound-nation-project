@@ -7,14 +7,14 @@ import axios from "axios";
 
 export const EnSavoirPlus = () => {
   const { id } = useParams();
-  const [groupe, setGroupe] = useState(null);
+  const [groupe, setGroupe] = useState([]);
 
 
   useEffect(() => {
     const getData = async () => {
 
-      try{const response = await axios.get(`http://localhost:3000/api/groupes/${id}`);
-        setGroupe(response.data.data[0]);
+      try{const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/groupes/${id}`);
+        setGroupe(response.data.data);
       } catch (error) {
         console.log("Erreur lors de la récupération des données");
       }
@@ -37,7 +37,7 @@ export const EnSavoirPlus = () => {
         <h1 className="text-white text-[1.5rem] underline">{groupe.groupe_name}</h1>
         
         <img
-          src={`http://localhost:3000/${groupe.groupe_image_path}`}
+          src={`${import.meta.env.VITE_API_URL}/${groupe.groupe_image_path}`}
           alt={groupe.groupe_image_alt}
           className="w-[15em] rounded-[30px]"
         />

@@ -5,7 +5,7 @@ export const FiltrageMap = ({ dataMap, uniqueCategories, setCheckBoxToDisplay}) 
   const [selectedCategory, setSelectedCategory] = useState([]);
 
   useEffect(() => {
-    const defaultCategory = ["Scène", "Entrée", "Toilettes"];
+    const defaultCategory = ["Scène", "Entrée", "Food-truck"];
     setSelectedCategory(defaultCategory);
     setCheckBoxToDisplay(dataMap.filter((item) => defaultCategory.includes(item.place_category)));
   },[dataMap, setCheckBoxToDisplay]);
@@ -27,7 +27,7 @@ export const FiltrageMap = ({ dataMap, uniqueCategories, setCheckBoxToDisplay}) 
     <div className="flex flex-col mt-6 mb-[3em] bg-black gap-5 ml-8 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-[3em]">
       {uniqueCategories.map((category, index) => ( 
         <div key={index} className="flex items-center gap-3">
-            <img className="w-[1.5em]" src={`http://localhost:3000/${category.logo}`} alt={category.alt} />
+            <img className="w-[1.5em]" src={`${import.meta.env.VITE_API_URL}/${category.logo}`} alt={category.alt} />
             <div className="flex gap-2 items-center"> 
               <input type="checkbox" id={category.cat} onChange={handleCheckBoxChange} checked={selectedCategory.includes(category.cat)}/>
               <label className="text-white" htmlFor={category.cat}>{category.cat}</label>

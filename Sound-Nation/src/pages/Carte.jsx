@@ -24,7 +24,7 @@ export const Carte = () => {
   useEffect(() => {
     const getDataGroupes = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/groupes');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/groupes/public/groupes`);
         if(response.data.status){
           setDataGroupe(response.data.data);
           setIsLoadingGroupe(false);
@@ -42,7 +42,7 @@ export const Carte = () => {
   useEffect(() => {
     const getDataMap = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/places');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/places/public/places`);
         if(response.data.status){
           setDataMap(response.data.data);
           const tempCategories = response.data.data.map((place) => {

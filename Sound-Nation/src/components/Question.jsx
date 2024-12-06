@@ -8,16 +8,16 @@ export const Question = ({ id, question, reponse }) => {
   };
 
   return (
-    <div key={id}>
+    <div className="md:w-[20em] lg:w-[30em]">
       <ul>
         <li
-          className={`text-[white] bg-[#023E33] p-2 rounded-lg mt-10 w-[100%] relative z-20 flex flex-row justify-center ${
+          className={`text-[white] md:h-[8em] bg-[#023E33] p-2 rounded-lg mt-10 w-[100%] relative z-20 flex flex-row justify-center ${
             isOpen ? "rounded-b-none" : ""
           }`}
         >
           <button
             onClick={handleClick}
-            className="flex flex-col items-center gap-3"
+            className="flex flex-col items-center gap-3 justify-between"
           >
             {question}
             <img

@@ -17,10 +17,10 @@ export const DisplayPartenaireByCat = ({ cat, data }) => {
                 <img
                   src={
                     
-                    `http://localhost:3000/${partenaire.partner_image_path}`
+                    `${import.meta.env.VITE_API_URL}/${partenaire.partner_image_path}`
                   }
                   alt={
-                    `http://localhost:3000/${partenaire.partner_image_alt}`
+                    `${import.meta.env.VITE_API_URL}/${partenaire.partner_image_alt}`
                   }
                   className="w-[13em] rounded-[30px]"
                 />
