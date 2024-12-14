@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { VignetteGroupe } from "./VignetteGroupe";
+import { VignetteGroupe } from "../VignetteGroupe";
 import axios from "axios";
 
 export const AffichageGroupe = ({ data }) => {

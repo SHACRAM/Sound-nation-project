@@ -1,4 +1,4 @@
-import { Question } from "./Question";
+import { Question } from "./informations/Question";
 import axios from "axios";
 import { useState, useEffect } from "react";
 // Composant qui permet de récupérer les questions et réponses de la FAQ et de les envoyer au composant Question

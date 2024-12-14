@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 // Composant qui gère l'affichage de la navigation mobile
 export const NavBarMobile = ({burgerClass, menuClass, updateMenu, handleLogOut}) => {
   const {connectInformation, setConnectInformation} = useContext(AuthContext);

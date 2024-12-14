@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { DisplayPartenaireByCat } from "../components/DisplayPartenaireByCat";
+import { DisplayPartenaireByCat } from "../components/partenaire/DisplayPartenaireByCat";
 import { Layout } from "../components/Layout";
 // Page qui affiche les partenaires du festival
 export const Partenaire = () => {

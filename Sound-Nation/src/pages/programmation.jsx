@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AffichageGroupe } from "../components/AffichageGroupe";
+import { AffichageGroupe } from "../components/groupe/AffichageGroupe";
 import { Filtrage } from "../components/Filtrage";
 import { Layout } from "../components/Layout";
 import axios from "axios";

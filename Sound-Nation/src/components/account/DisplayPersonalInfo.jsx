@@ -1,13 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 // Composant qui affiche les informations personnelles de l'utilisateur
 export const DisplayPersonalInfo = ({data}) => {
-    const {connectInformation} = useContext(AuthContext);
+    
    
-    // afficher les infos
-    // créer les boutons de modification des données
     return(
         <div className="mt-3 flex flex-col gap-2 sm:mt-0">
             <h2 className="text-white text-[1.2rem]">Mes informations personnelles</h2>

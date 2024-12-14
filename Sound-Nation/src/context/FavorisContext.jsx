@@ -20,7 +20,6 @@ export const FavorisProvider = ({ children }) => {
         setMessage(response.data.message);
         setIsSuccess(true);
 
-        // Si le groupe est favori, on l'ajoute, sinon on le retire
         if (isFavorite) {
           setFavoriteGroupe((prev) => prev.filter((id) => id !== groupeId));
         } else {
@@ -41,7 +40,7 @@ export const FavorisProvider = ({ children }) => {
             { withCredentials: true }
         );
         if (response.status === 200) {
-            setFavoriteGroupe(response.data.data); // Mettre à jour l'état des favoris
+            setFavoriteGroupe(response.data.data); 
         }
     } catch (error) {
         console.error("Erreur lors de la récupération des favoris", error);

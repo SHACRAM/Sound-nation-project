@@ -1,7 +1,7 @@
 import { ReseauxSociaux } from "./ReseauxSociaux";
 import { NavLink } from "react-router-dom";
-import { NavBarMobile } from "./NavBarMobile";
-import { NavBarDesktop } from "./NavBarDesktop";
+import { NavBarMobile } from "./navBar/NavBarMobile";
+import { NavBarDesktop } from "./navBar/NavBarDesktop";
 import { useState,useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";

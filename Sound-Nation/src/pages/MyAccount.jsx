@@ -1,8 +1,8 @@
 import React from "react";
 import { Layout } from "../components/Layout";
-import { DisplayPersonalInfo } from "../components/DisplayPersonalInfo";
+import { DisplayPersonalInfo } from "../components/account/DisplayPersonalInfo";
 import { DisplayFavoriteGroupe } from "../components/DisplayFavoriteGroupe";
-import { DeleteAccount } from "../components/DeleteAccount";
+import { DeleteAccount } from "../components/account/DeleteAccount";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
