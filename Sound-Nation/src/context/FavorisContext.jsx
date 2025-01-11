@@ -11,7 +11,7 @@ export const FavorisProvider = ({ children }) => {
   const handleFavoris = async (groupeId, userEmail, isFavorite) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/users/favoris`,
+        `https://soundnation.duckdns.org/api/users/favoris`,
         { groupeId, userEmail },
         { withCredentials: true }
       );
@@ -36,7 +36,7 @@ export const FavorisProvider = ({ children }) => {
   const handleFavoriteGroupe = async () => {
     try {
         const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/users/favoris/${connectInformation.user_email}`,
+            `https://soundnation.duckdns.org/api/users/favoris/${connectInformation.user_email}`,
             { withCredentials: true }
         );
         if (response.status === 200) {

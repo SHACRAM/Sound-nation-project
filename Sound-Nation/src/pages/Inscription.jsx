@@ -29,7 +29,7 @@ export const Inscription = () => {
 
 
         try{
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/signup`, {email, identifiant, password, role}, { headers: { 'Content-Type': 'application/json' }});
+            const response = await axios.post(`https://soundnation.duckdns.org/api/users/signup`, {email, identifiant, password, role}, { headers: { 'Content-Type': 'application/json' }});
             if(response.status=== 201){
                 setMessage(response.data.message);
                 setIsSuccess(true);

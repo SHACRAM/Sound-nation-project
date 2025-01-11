@@ -8,7 +8,7 @@ export const Faq = () => {
 
   const getQuestionsReponse = async () => {
     try{
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/informations/public/faq`);
+      const response = await axios.get(`https://soundnation.duckdns.org/api/informations/public/faq`);
       if(response.data.status){
         setQuestionReponse(response.data.data);
         setLoading(false);

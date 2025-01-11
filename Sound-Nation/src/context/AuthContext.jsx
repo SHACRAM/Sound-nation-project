@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   
     const handleUserInformation = async () => {
       try {
-          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/connectInformation`, { withCredentials: true });
+          const response = await axios.get(`https://soundnation.duckdns.org/api/users/connectInformation`, { withCredentials: true });
           if (response.status === 200) {
               setConnectInformation(response.data.data);
           } else {

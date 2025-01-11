@@ -10,7 +10,7 @@ export const DisplayGroupeOnline = ({ concertEnCours,pourcentage }) => {
                     <div key={index} className="border border-white m-3 rounded-md flex flex-col items-center">
                         <h2 className="text-white text-[1.3rem] mt-2">{groupe.groupe_name}</h2>
                         <img 
-                            src={`${import.meta.env.VITE_API_URL}/${groupe.groupe_image_path}`} 
+                            src={`https://soundnation.duckdns.org/${groupe.groupe_image_path}`} 
                             alt={groupe.groupe_image_alt} 
                             className="rounded-md w-[12em] m-5" 
                         />

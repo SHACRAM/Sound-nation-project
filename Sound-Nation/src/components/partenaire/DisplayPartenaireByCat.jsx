@@ -17,10 +17,10 @@ export const DisplayPartenaireByCat = ({ cat, data }) => {
                 <img
                   src={
                     
-                    `${import.meta.env.VITE_API_URL}/${partenaire.partner_image_path}`
+                    `https://soundnation.duckdns.org/${partenaire.partner_image_path}`
                   }
                   alt={
-                    `${import.meta.env.VITE_API_URL}/${partenaire.partner_image_alt}`
+                    `https://soundnation.duckdns.org/${partenaire.partner_image_alt}`
                   }
                   className="w-[13em] rounded-[30px]"
                 />

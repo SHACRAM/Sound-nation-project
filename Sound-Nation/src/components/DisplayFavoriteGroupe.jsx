@@ -14,7 +14,7 @@ export const DisplayFavoriteGroupe = () => {
     const handleFavoris = async (groupeId, userEmail) => {
         try {
           const response = await axios.post(
-            `${import.meta.env.VITE_API_URL}/api/users/favoris`,
+            `https://soundnation.duckdns.org/api/users/favoris`,
             { groupeId, userEmail },
             { withCredentials: true }
           );
@@ -40,7 +40,7 @@ export const DisplayFavoriteGroupe = () => {
         }
 
         try{
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
+            const response = await axios.get(`https://soundnation.duckdns.org/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
             if(response.status===200){
                 setFavoriteGroupe(response.data.data);
             }
@@ -77,7 +77,7 @@ export const DisplayFavoriteGroupe = () => {
                 : favoriteGroupe.map((groupe, index)=>(
                     <div key={index} className="flex mb-5 gap-2 p-2 items-center border-y justify-between">
                         <div className="">
-                            <img src={`${import.meta.env.VITE_API_URL}/${groupe.groupe_image_path}`} alt={groupe.groupe_image_alt} className="w-[5em]" />
+                            <img src={`https://soundnation.duckdns.org/${groupe.groupe_image_path}`} alt={groupe.groupe_image_alt} className="w-[5em]" />
                         </div>
                         <div className="flex flex-col sm:flex-row sm:gap-10 ">
                             <p className="text-white">

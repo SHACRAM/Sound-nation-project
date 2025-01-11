@@ -115,7 +115,7 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
                       <h2 className="text-[1.5rem]">
                         {place.place_name}
                       </h2>
-                      <img  className="rounded" src={`${import.meta.env.VITE_API_URL}/${place.place_image_path}`} alt={place.place_image_alt} />
+                      <img  className="rounded" src={`https://soundnation.duckdns.org/${place.place_image_path}`} alt={place.place_image_alt} />
                       <p className="text-[1rem]">{place.place_info_popup}</p>
                       {place.place_category === "Scène" ?
                       <div>

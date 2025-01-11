@@ -34,7 +34,7 @@ export const Programmation = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/groupes/public/groupes`);
+        const response = await axios.get(`https://soundnation.duckdns.org/api/groupes/public/groupes`);
         if(response.data.status){
           setData(response.data.data);
           const tempDate =[];

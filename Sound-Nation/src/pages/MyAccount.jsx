@@ -21,7 +21,7 @@ export const MyAccount = () => {
 
     const checkAuth = async () => {
         try {
-            await axios.get(`${import.meta.env.VITE_API_URL}/api/authentication/verify-auth`, { withCredentials: true });
+            await axios.get(`https://soundnation.duckdns.org/api/authentication/verify-auth`, { withCredentials: true });
         } catch (error) {
             if (error.response && error.response.status === 401) {
                 navigate("/");
@@ -31,7 +31,7 @@ export const MyAccount = () => {
 
     const handleInformations =async ()=>{
         try{
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/information/${connectInformation.user_email}`, {withCredentials: true});
+            const response = await axios.get(`https://soundnation.duckdns.org/api/users/information/${connectInformation.user_email}`, {withCredentials: true});
             if(response.status){
                 setData(response.data.data);
             }
@@ -42,7 +42,7 @@ export const MyAccount = () => {
 
     const handleDelete = async () => {
         try{
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/deleteAccount/${connectInformation.user_email}`, {withCredentials: true});
+            const response = await axios.delete(`https://soundnation.duckdns.org/api/users/account/${connectInformation.user_email}`, {withCredentials: true});
             if(response.data.status){
                 setMessageDeleteAccount(response.data.message);
                 setTimeout(()=>{
@@ -73,7 +73,6 @@ export const MyAccount = () => {
         return () => clearInterval(interval);
     }, [navigate,connectInformation, loading]);
 
-// Créer un bouton de supression de compte
     return(
         <Layout>
             <div className="bg-black m-7 flex flex-col items-center rounded-md">

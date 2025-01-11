@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://sound-nation-f5c67.firebaseapp.com/sitemap.xml
+Sitemap: https://soundnation.duckdns.org/sitemap.xml

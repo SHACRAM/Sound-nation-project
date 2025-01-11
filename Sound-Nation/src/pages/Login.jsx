@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/authentication/signin`, {email, password}, { withCredentials: true });
+            const response = await axios.post(`https://soundnation.duckdns.org/api/authentication/signin`, {email, password}, { withCredentials: true });
             if(response.status){
                 setMessage(response.data.message);
                 setConnectInformation(response.data.data);

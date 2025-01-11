@@ -22,7 +22,7 @@ export const Header = () => {
 
 
   const handleLogOut = async()=>{
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/authentication/logOut`, { withCredentials: true });
+    const response = await axios.get(`https://soundnation.duckdns.org/api/authentication/logOut`, { withCredentials: true });
     if(response.data.status){
         setDisconnectMessage(response.data.message);
         setConnectInformation(null);
@@ -72,7 +72,7 @@ const handleCookie = ()=>{
         
       </div>
       <div className="flex justify-between sm:flex-col sm:items-center lg:flex-row">
-        <a href="http://localhost:5173/">
+        <a href="https://sound-nation.vercel.app/">
           <img
             src="/images/logo.png"
             alt="Logo du festival Sound Nation"

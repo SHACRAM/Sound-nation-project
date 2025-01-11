@@ -17,7 +17,7 @@ export const VignetteGroupe = ({ groupe }) => {
     }
 
     try{
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
+        const response = await axios.get(`https://soundnation.duckdns.org/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
         if(response.status===200){
           const tempId = [];
             response.data.data.map((groupe)=>(
@@ -41,7 +41,7 @@ const handleFavoris = async (groupeId, userEmail) => {
     }
 
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/users/favoris`,
+      `https://soundnation.duckdns.org/api/users/favoris`,
       { groupeId, userEmail },
       { withCredentials: true }
     );
@@ -76,7 +76,7 @@ const handleFavoris = async (groupeId, userEmail) => {
         </h2>
         <img
           className="w-[15em] rounded-[30px]"
-          src={`${import.meta.env.VITE_API_URL}/`+ groupe.groupe_image_path
+          src={`https://soundnation.duckdns.org/`+ groupe.groupe_image_path
           }
           alt={groupe.groupe_image_alt}
         />

@@ -23,7 +23,7 @@ export const ModifyMyInformation = () => {
         const getData = async () => {
           try {
             const response = await axios.get(
-              `${import.meta.env.VITE_API_URL}/api/users/information/${email}`,
+              `https://soundnation.duckdns.org/api/users/information/${email}`,
               { withCredentials: true }
             );
     
@@ -53,7 +53,7 @@ export const ModifyMyInformation = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/updateUser/${email}`, {email:newEmail, name:newName}, { headers: { 'Content-Type': 'application/json' }});
+            const response = await axios.put(`https://soundnation.duckdns.org/api/users/updateUser/${email}`, {email:newEmail, name:newName}, { headers: { 'Content-Type': 'application/json' }});
             if(response.status===200){
                 setMessage(response.data.message);
                 setConnectInformation({

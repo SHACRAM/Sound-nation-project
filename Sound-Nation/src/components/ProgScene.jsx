@@ -19,7 +19,7 @@ export const ProgScene = ({ id, nom, jour, heure, image, alt }) => {
       }
   
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/users/favoris`,
+        `https://soundnation.duckdns.org/api/users/favoris`,
         { groupeId, userEmail },
         { withCredentials: true }
       );
@@ -39,7 +39,7 @@ export const ProgScene = ({ id, nom, jour, heure, image, alt }) => {
     }
 
     try{
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
+        const response = await axios.get(`https://soundnation.duckdns.org/api/users/favoris/${connectInformation.user_email}`, {withCredentials: true});
         if(response.status===200){
           const tempId = [];
             response.data.data.map((groupe)=>(
@@ -70,7 +70,7 @@ export const ProgScene = ({ id, nom, jour, heure, image, alt }) => {
             pathname: `/EnSavoirPlus/${id}`,
          }} >
         <div className="border hover:rounded-2xl hover:transition-all duration-200">
-          <img src={`${import.meta.env.VITE_API_URL}/${image}`} alt={alt} className="w-[15em] p-2 rounded-2xl" />
+          <img src={`https://soundnation.duckdns.org/${image}`} alt={alt} className="w-[15em] p-2 rounded-2xl" />
           <div className="p-3 flex flex-col gap-3">
             <div>
               <p className="text-white flex gap-3">

@@ -16,7 +16,7 @@ export const DisplayInfosPratiques = () => {
   const getData = async () => {
     try{
 
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/informations/public/getInfopratique`);
+      const response = await axios.get(`https://soundnation.duckdns.org/api/informations/public`);
       if(response.data.status){
         setData(response.data.data);
         setLoading(false);
