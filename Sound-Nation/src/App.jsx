@@ -10,7 +10,7 @@ import { DonneesPersonnelles } from "./pages/DonneesPersonnelles";
 import { EnSavoirPlus } from "./pages/EnSavoirPlus";
 import { InformationsFaq } from "./pages/InformationsFaq";
 import { Partenaire } from "./pages/Partenaire";
-
+import { Programmation } from "./pages/Programmation";
 import { ConcertEnCours } from "./pages/ConcertEnCours";
 import { Login } from "./pages/Login";
 import { Inscription } from "./pages/Inscription";
