@@ -3,7 +3,7 @@ import { AffichageGroupe } from "../components/groupe/AffichageGroupe";
 import { Filtrage } from "../components/Filtrage";
 import { Layout } from "../components/Layout";
 import axios from "axios";
-// Page de la programmation du festival
+// Page de la programmation du festival.
 export const Programmation = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
