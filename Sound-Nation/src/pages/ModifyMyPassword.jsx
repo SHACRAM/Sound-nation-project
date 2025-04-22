@@ -27,7 +27,7 @@ export const ModifyMyPassword = () => {
        
 
         try{
-            const response = await axios.put(`https://soundnation.duckdns.org/api/authentication/${connectInformation.user_email}`, {password:checkPassword},{ withCredentials: true } );
+            const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/authentication/${connectInformation.user_email}`, {password:checkPassword},{ withCredentials: true } );
             if(response.status ===200){
                 setMessage(response.data.message);
                 setIsSuccess(true);

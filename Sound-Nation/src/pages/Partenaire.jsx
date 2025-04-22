@@ -11,7 +11,7 @@ export const Partenaire = () => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `https://soundnation.duckdns.org/api/partners/getPartners/public`
+          `${import.meta.env.VITE_API_URL}/api/partners/getPartners/public`
         );
         if (response.data.status) {
           setData(response.data.data);

@@ -1,5 +1,8 @@
 import "leaflet/dist/leaflet.css";
 import "leaflet/dist/leaflet.js";
+import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 
 // Composant qui gère l'affichage de la carte et de ses marqueurs
@@ -15,9 +18,14 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
   const formattedDate = actualDate.toLocaleDateString('fr-FR', options);
   const mapRef = useRef(null);
 
-
-  
-  
+  const customIcon = L.icon({
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
 
 
 
@@ -109,19 +117,19 @@ export const MyMap = ({activateFullScreen,desactiveFullScreen,isFullScreen,dataM
           />
           {checkBoxToDisplay.map((place, index) => (
             <div key={index}>
-                <Marker position={[parseFloat(place.place_latitude),parseFloat(place.place_longitude)]}>
+                <Marker position={[parseFloat(place.place_latitude),parseFloat(place.place_longitude)]} icon={customIcon}>
                    <Popup>
                     <div className="w-[13em] flex flex-col items-center gap-3">
                       <h2 className="text-[1.5rem]">
                         {place.place_name}
                       </h2>
-                      <img  className="rounded" src={`https://soundnation.duckdns.org/${place.place_image_path}`} alt={place.place_image_alt} />
+                      <img  className="rounded" src={`${import.meta.env.VITE_API_URL}/${place.place_image_path}`} alt={place.place_image_alt} />
                       <p className="text-[1rem]">{place.place_info_popup}</p>
                       {place.place_category === "Scène" ?
                       <div>
                         {groupeConcertActuel.length > 0 ? <div className="flex  gap-2">
                           <NavLink className="border border-black rounded-md p-2" to="/ConcertEnCours" state={{ groupeOnline: groupeConcertActuel }}>Concerts en cours</NavLink>
-                          <img className="animate-pulse w-[3em]" src="public/Images/live.png" alt="Logo de live e cours" />
+                          <img className="animate-pulse w-[3em]" src="/images/live.png" alt="Logo de live e cours" />
                         </div> 
                         : <div className="flex flex-col  gap-2">
                           <p className="text-[1rem]">Pas de concert en cours</p>

@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 // Composant qui affiche les informations personnelles de l'utilisateur
 export const DisplayPersonalInfo = ({data}) => {
+    const {connectInformation, setConnectInformation} = useContext(AuthContext);
     
    
     return(
@@ -25,7 +26,10 @@ export const DisplayPersonalInfo = ({data}) => {
                     to={`/ModifyMyPassword/${data.user_email}`}>Modifier mon mot de passe</NavLink>
                 </div>
             </div>
-        </div>
+            {connectInformation?.user_role === 'admin' || 'adminSys'  ?
+            <a href="https://back-office-api-sound-nation.vercel.app/DisplayMainContent" className="text-white bg-[#023E33] flex justify-center w-fit mt-3 rounded-md p-3 hover:opacity-80 " target="blank">Accéder au back-office</a>
+            : ''}
+            </div>
         
     )
 };

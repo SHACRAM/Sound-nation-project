@@ -18,7 +18,10 @@ describe('NavBarMobile component', () => {
         }};
         const mockUpdateMenu = vi.fn();
 
-        const {container} = render( <AuthContext.Provider value={mockAuthContext}><BrowserRouter><NavBarMobile updateMenu={mockUpdateMenu}/> </BrowserRouter></AuthContext.Provider>)
+        const {container} = render( 
+            <AuthContext.Provider value={mockAuthContext}>
+                <BrowserRouter><NavBarMobile updateMenu={mockUpdateMenu}/> </BrowserRouter>
+            </AuthContext.Provider>)
         
         const burgerMenu = container.querySelector('.burger-menu');
         fireEvent.click(burgerMenu);

@@ -1,7 +1,7 @@
-import { ReseauxSociaux } from "./ReseauxSociaux";
 import { NavLink } from "react-router-dom";
 import { NavBarMobile } from "./navBar/NavBarMobile";
 import { NavBarDesktop } from "./navBar/NavBarDesktop";
+import { ReseauxSociaux } from "./ReseauxSociaux";
 import { useState,useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -22,7 +22,7 @@ export const Header = () => {
 
 
   const handleLogOut = async()=>{
-    const response = await axios.get(`https://soundnation.duckdns.org/api/authentication/logOut`, { withCredentials: true });
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/authentication/logOut`, { withCredentials: true });
     if(response.data.status){
         setDisconnectMessage(response.data.message);
         setConnectInformation(null);
@@ -30,7 +30,7 @@ export const Header = () => {
         setBurgerClass('burger-bar unclicked');
         setTimeout(()=>{
             navigate('/');
-        }, 2000);
+        },0);
     } else {
         setDisconnectMessage(response.data.message);
     }
@@ -96,5 +96,5 @@ const handleCookie = ()=>{
       </div> : null}
       
     </header>
-  );
+  );v
 };
